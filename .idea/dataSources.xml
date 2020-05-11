@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="papayaDevelopment@papayadevelopment.c4uezhkdngn1.us-east-1.rds.amazonaws.com" uuid="09c24a74-29e5-44de-b2f1-912021688134">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://papayadevelopment.c4uezhkdngn1.us-east-1.rds.amazonaws.com/papayaDevelopment</jdbc-url>
+    </data-source>
+  </component>
+</project>
