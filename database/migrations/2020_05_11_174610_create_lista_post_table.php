@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateListasPostsTable extends Migration
+class CreateListaPostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateListasPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('listas_posts', function (Blueprint $table) {
+        Schema::create('lista_post', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('lista_id')->unsigned();
             $table->bigInteger('post_id')->unsigned();
@@ -32,6 +32,6 @@ class CreateListasPostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('listas_posts');
+        Schema::dropIfExists('lista_post');
     }
 }
