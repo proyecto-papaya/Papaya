@@ -9,4 +9,8 @@ class PostController extends Controller
     public function showForm() {
         return view("formulario_post");
     }
+
+    public function showHome(){
+        return view('home');
+    }
 }
