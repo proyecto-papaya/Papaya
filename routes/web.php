@@ -27,4 +27,6 @@ Route::get('formPost','postController@showForm');
 
 Route::post('createPost','postController@createPost');
 
-/////////////////////////////////////////////////////////////////
+/////////////////////777777777777777777777777777777/////////////////////////
+
+Route::get('/','PostController@showHome');
