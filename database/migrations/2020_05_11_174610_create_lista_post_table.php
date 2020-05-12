@@ -15,7 +15,13 @@ class CreateListasPostsTable extends Migration
     {
         Schema::create('listas_posts', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('lista_id')->unsigned();
+            $table->bigInteger('post_id')->unsigned();
+
             $table->timestamps();
+
+            $table->foreign('lista_id')->references('id')->on('listas')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
