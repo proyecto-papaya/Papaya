@@ -4,7 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            AQUI VAN LAS CARDS
+            @foreach($posts as $post)
+                <div class="card">
+
+                </div>
+            @endforeach
         </div>
         <div class="col-md-2">
             AQUI VAN LAS SUGERENCIAS.
