@@ -13,20 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 ////////////RUTAS CARLOS/////////////////////////////////////////
 
-Route::get('formPost','postController@showForm');
+Route::get('formPost','PostController@showForm');
 
-Route::post('createPost','postController@createPost');
+Route::post('createPost','PostController@createPost');
 
 /////////////////////777777777777777777777777777777/////////////////////////
 
+//Mostrar home (falta middleware)
 Route::get('/','PostController@showHome');
