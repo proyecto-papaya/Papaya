@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'profile_picture', 'description', 'role'
     ];
 
     /**
@@ -36,4 +36,46 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /** Relación N:1 con Post
+     *
+     * Un usuario tiene N posts pero un post pertenece a 1 usuario
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
+
+    /** Relación N:1 con Archivo
+     *
+     * Un usuario tiene N archivos pero un archivo pertenece a 1 usuario
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function archivos(){
+        return $this->hasMany('App\Archivo');
+    }
+
+    /** Relación N:1 con Comentario
+     *
+     * Un usuario tiene N comentarios pero un comentario pertenece a 1 usuario
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comentarios(){
+        return $this->hasMany('App\Comentario');
+    }
+
+    /** Relación N:1 con Lista
+     *
+     * Un usuario tiene N listas pero una lista pertenece a 1 usuario
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function listas(){
+        return $this->hasMany('App\Lista');
+    }
+
 }
