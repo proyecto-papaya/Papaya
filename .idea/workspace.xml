@@ -20,11 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f297f703-a04b-4c39-8267-720e0cb82030" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Papaya.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Papaya.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/09c24a74-29e5-44de-b2f1-912021688134.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/09c24a74-29e5-44de-b2f1-912021688134.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +136,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1blWryfxvFnzWZqFOkgnBFHkiBA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -148,7 +149,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../concertum/app/Http/Controllers/eventoController.php" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -175,6 +176,7 @@
       <updated>1589207362900</updated>
       <workItem from="1589207366124" duration="4973000" />
       <workItem from="1589217603379" duration="1766000" />
+      <workItem from="1589297894532" duration="5840000" />
     </task>
     <servers />
   </component>
@@ -191,11 +193,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="278" y="30" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589216121986">
       <screen x="0" y="27" width="1366" height="686" />
     </state>
     <state x="278" y="30" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.686@0.27.1366.686" timestamp="1589216121986" />
+    <state x="466" y="127" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589303521031">
+      <screen x="0" y="27" width="1366" height="686" />
+    </state>
+    <state x="466" y="127" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.686@0.27.1366.686" timestamp="1589303521031" />
+    <state x="478" y="294" width="399" height="149" key="NewPhpFileDialog" timestamp="1589299758911">
+      <screen x="0" y="27" width="1366" height="686" />
+    </state>
+    <state x="478" y="294" width="399" height="149" key="NewPhpFileDialog/0.27.1366.686@0.27.1366.686" timestamp="1589299758911" />
   </component>
 </project>
