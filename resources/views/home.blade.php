@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div id="posts" class="col-md-8">
             @if(count($posts))
                 @foreach($posts as $post)
                     <div class="card">
-
+                        <div class="card-title">{{$post->title}}</div>
                     </div>
                 @endforeach
             <div class="loading"></div>
