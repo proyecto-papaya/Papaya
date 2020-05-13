@@ -4,11 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @foreach($posts as $post)
-                <div class="card">
+            @if(count($posts))
+                @foreach($posts as $post)
+                    <div class="card">
 
-                </div>
-            @endforeach
+                    </div>
+                @endforeach
+            @else
+                Todavía no hay ningún post.
+            @endif
         </div>
         <div class="col-md-2">
             AQUI VAN LAS SUGERENCIAS.
