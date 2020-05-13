@@ -10,8 +10,9 @@
 
                     </div>
                 @endforeach
+            <div class="loading"></div>
             @else
-                Todavía no hay ningún post.
+                <p>Todavía no hay ningún post.</p>
             @endif
         </div>
         <div class="col-md-2">
