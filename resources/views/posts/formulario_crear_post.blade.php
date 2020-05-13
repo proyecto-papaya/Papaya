@@ -15,16 +15,19 @@
             <div class="row">
                 <div class="col-6">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="private" name="privado">
+                        <input type="checkbox" class="form-check-input" id="private" name="private">
                         <label class="form-check-label" for="private">Privado</label>
                     </div>
                 </div>
-                <div class="col-6">
-                    <label><i class="fas fa-file-upload fa-3x" style="color:#000000;"></i></label>
-                </div>
+{{--                <div class="col-6">--}}
+{{--                    <label><i class="fas fa-file-upload fa-3x" style="color:#000000;"></i></label>--}}
+{{--                </div>--}}
             </div>
-                    <input type="file" class="form-control-file" id="file" value='' name="file">
-            <button type="submit" class="btn btn-success btn-block font-weight-bolder ">Subir</button>
+            <div class="for-group my-3">
+                <input type="file" class="form-control-file" id="file" value='' name="file">
+            </div>
+
+            <button type="submit" style="background-color:#f67f21" class="btn btn-block font-weight-bolder ">Subir</button>
     </form>
 </div>
 @endsection
