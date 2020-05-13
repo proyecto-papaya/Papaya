@@ -21,4 +21,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('#posts').infinitescroll({
+        navSelector  : "ul.pagination",
+        nextSelector : "ul.pagination li:last-child a",
+        itemSelector : "#posts div.item",
+        loading: {
+            finished: undefined,
+            finishedMsg: "No se encontraron mas posts para mostrar",
+            img: {{ asset('images/loading.gif') }},
+            msg: null,
+            msgText: "Cargando...",
+            selector: ".loading",
+            speed: 'fast',
+            start: undefined
+        }});
+</script>
+
 @endsection
