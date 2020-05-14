@@ -7,7 +7,7 @@
             @include("posts._cards")
         </div>
         <div class="col-xl-3 d-none d-xl-block position-fixed" style="margin-left: 50em">
-            <div class="jumbotron w-75">
+            <div class="border border-dark text-center w-75">
                 @include("posts._discover")
             </div>
         </div>
