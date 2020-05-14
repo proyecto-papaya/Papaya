@@ -8503,6 +8503,10 @@ button.bg-dark:focus {
   margin-right: 3rem !important;
 }
 
+.mr-15{
+    margin-right: 15em !important;
+}
+
 .mb-5,
 .my-5 {
   margin-bottom: 3rem !important;
@@ -8935,6 +8939,11 @@ button.bg-dark:focus {
   .mx-sm-5 {
     margin-right: 3rem !important;
   }
+
+    .mr-sm-15,
+    .mx-sm-15 {
+        margin-right: 15rem !important;
+    }
 
   .mb-sm-5,
   .my-sm-5 {
@@ -9370,6 +9379,11 @@ button.bg-dark:focus {
     margin-right: 3rem !important;
   }
 
+    .mr-md-15,
+    .mx-md-15 {
+        margin-right: 15rem !important;
+    }
+
   .mb-md-5,
   .my-md-5 {
     margin-bottom: 3rem !important;
@@ -9804,6 +9818,11 @@ button.bg-dark:focus {
     margin-right: 3rem !important;
   }
 
+    .mr-lg-15,
+    .mx-lg-15 {
+        margin-right: 15rem !important;
+    }
+
   .mb-lg-5,
   .my-lg-5 {
     margin-bottom: 3rem !important;
@@ -10237,6 +10256,11 @@ button.bg-dark:focus {
   .mx-xl-5 {
     margin-right: 3rem !important;
   }
+
+    .mr-xl-15,
+    .mx-xl-15 {
+        margin-right: 15rem !important;
+    }
 
   .mb-xl-5,
   .my-xl-5 {
