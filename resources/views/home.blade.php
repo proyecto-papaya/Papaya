@@ -6,7 +6,7 @@
         <div id="posts" class="col-md-8">
             @if(count($posts))
                 @foreach($posts as $post)
-                    <div class="card">
+                    <div class="card p-5">
                         <div class="card-title">{{$post->title}}</div>
                     </div>
                 @endforeach
@@ -22,21 +22,28 @@
     </div>
 </div>
 
-<script>
-    $('#posts').infinitescroll({
-        navSelector  : "ul.pagination",
-        nextSelector : "ul.pagination li:last-child a",
-        itemSelector : "#posts div.item",
-        loading: {
-            finished: undefined,
-            finishedMsg: "No se encontraron mas posts para mostrar",
-            img: {{ asset('images/loading.gif') }},
-            msg: null,
-            msgText: "Cargando...",
-            selector: ".loading",
-            speed: 'fast',
-            start: undefined
-        }});
-</script>
+<script type="application/javascript">
 
+    //document.addEventListener(window, infiniteScroll);
+
+    window.onscroll = ()=>{
+        let pagina = 2
+
+        if((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight){
+
+            console.log("FUNCIONA")
+
+            fetch(`/nombres/paginacion?page=${pagina}`, {
+                method: 'get'
+            })
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('posts').innerHTML += html
+            })
+            .catch(error=> console.log(error))
+        }
+    }
+
+</script>
 @endsection
+
