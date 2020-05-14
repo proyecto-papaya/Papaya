@@ -1,15 +1,12 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
-    <div class="row justify-content-center mt-2">
-        <div id="posts" class="col-12 col-lg-8 mr-0 mr-sm-5 mr-lg-15">
+    <div class="row mt-2">
+        <div id="posts" class="col-12 col-lg-8 mr-0 mr-sm-5">
             @include("posts._cards")
         </div>
-        <div class="col-lg-3 d-none d-lg-block position-fixed" style="margin-left: 40%">
-            <div class="border border-dark text-center w-75">
-                @include("posts._discover")
-            </div>
+        <div class="col-lg-3 d-none d-lg-block border border-dark text-center h-75">
+            @include("posts._discover")
         </div>
     </div>
 </div>
