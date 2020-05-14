@@ -12,7 +12,7 @@
                     <div class="card-text row justify-content-between">
                         <div class="col-11 row">
                             <i class="fas fa-file-pdf col-1"></i>
-                            <div class="h6 col-3">{{$post->date()}}</div>
+                            <div class="h6 col-4">{{$post->date()}}</div>
                         </div>
                         <i class="far fa-heart col-1"></i>
 
