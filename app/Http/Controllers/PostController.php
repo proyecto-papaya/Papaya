@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Archivo;
-use Illuminate\Support\Facades\DB;
+
 
 class postController extends Controller
 {
