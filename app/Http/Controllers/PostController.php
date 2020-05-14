@@ -41,23 +41,4 @@ class postController extends Controller
             ->first();
         $post->delete();
     }
-
-        public function showHome(){
-        //paginate() sólo se puede usar sobre una query, no una Collection
-        $posts = Post::paginate(3)->sortByDesc('created_at');
-
-        $random_posts = DB::table('posts')
-                        ->inRandomOrder()
-                        ->take(10)
-                        ->get();
-
-        return view("home", compact("posts","random_posts"));
-    }
-
-    public function paginacion(){
-        //paginate() sólo se puede usar sobre una query, no una Collection
-        $posts = Post::paginate(3)->sortByDesc('created_at');
-
-        return view("posts._cards", compact("posts"));
-    }
 }
