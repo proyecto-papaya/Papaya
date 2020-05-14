@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Archivo;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 
-class PostController extends Controller
+class postController extends Controller
 {
     public function showForm() {
         return view("posts.formulario_crear_post");
@@ -77,5 +75,12 @@ class PostController extends Controller
 
         return redirect()->route('home');
 
+    }
+    public function deletePost($id)
+    {
+        $post = post::query()
+            ->where('id', $id)
+            ->first();
+        $post->delete();
     }
 }

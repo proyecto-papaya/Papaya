@@ -29,6 +29,3 @@ Route::put('updatePost{id}','PostController@updatePost');
 /////////////////////777777777777777777777777777777/////////////////////////
 
 //Mostrar home (falta middleware)
-Route::get('/','PostController@showHome')->name("home");
-
-Route::get('/pages','PostController@paginacion');
