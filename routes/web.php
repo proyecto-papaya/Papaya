@@ -31,9 +31,3 @@ Route::put('updatePost{id}','PostController@updatePost');
 Route::get('deletePost{id}', 'PostController@deletePost');
 
 //Mostrar home (falta middleware)
-<<<<<<< HEAD
-=======
-Route::get('/','HomeController@showHome')->name("home");
-
-Route::get('/pages','HomeController@paginacion');
->>>>>>> 7705cf6f4201e4f775afc3592f191f7fa342a837
