@@ -23,6 +23,8 @@ Route::post('createPost','postController@createPost');
 
 /////////////////////777777777777777777777777777777/////////////////////////
 
+Route::get('deletePost{id}', 'postController@deletePost');
+
 //Mostrar home (falta middleware)
 Route::get('/','postController@showHome');
 Route::get('/pages','postController@paginacion');

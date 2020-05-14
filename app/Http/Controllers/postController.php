@@ -34,7 +34,15 @@ class postController extends Controller
         return redirect()->route('home');
     }
 
-    public function showHome(){
+    public function deletePost($id)
+    {
+        $post = post::query()
+            ->where('id', $id)
+            ->first();
+        $post->delete();
+    }
+
+        public function showHome(){
         //paginate() sólo se puede usar sobre una query, no una Collection
         $posts = Post::paginate(3)->sortByDesc('created_at');
 
