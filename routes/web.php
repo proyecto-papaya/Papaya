@@ -21,7 +21,7 @@ Route::get('formPost','postController@showForm');
 
 Route::post('createPost','postController@createPost');
 
-<<<<<<< HEAD
+
 /////////////////////////////////////////////////////////////////
 
 ///////////// RUTA ANNY /////////////////////////////////////
@@ -29,10 +29,9 @@ Route::post('createPost','postController@createPost');
 Route::get('deletePost{id}', 'postController@deletePost');
 
 /////////////////////////////////////////////////////////////////
-=======
+
 /////////////////////777777777777777777777777777777/////////////////////////
 
 //Mostrar home (falta middleware)
 Route::get('/','postController@showHome');
 Route::get('/pages','postController@paginacion');
->>>>>>> 42822007fec7f00908e61f38711d6c26a122c72a
