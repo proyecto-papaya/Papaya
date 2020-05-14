@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/home', 'postController@showHome')->name('home');
+
 ////////////RUTAS CARLOS/////////////////////////////////////////
 
 Route::get('formPost','postController@showForm');
@@ -24,5 +26,6 @@ Route::post('createPost','postController@createPost');
 /////////////////////777777777777777777777777777777/////////////////////////
 
 //Mostrar home (falta middleware)
-Route::get('/','postController@showHome');
+Route::get('/','postController@showHome')->name("home");
+
 Route::get('/pages','postController@paginacion');
