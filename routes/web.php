@@ -30,4 +30,8 @@ Route::put('updatePost{id}','PostController@updatePost');
 
 Route::get('deletePost{id}', 'PostController@deletePost');
 
+//Paginación asíncrona
+Route::get('/pages','HomeController@paginacion');
 
+//Mostrar detalle de Post
+Route::get('/p/{id}','PostController@showDetail');
