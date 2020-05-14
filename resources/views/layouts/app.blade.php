@@ -27,77 +27,78 @@
     <link rel="stylesheet" href="{{asset('css/custom_app.css')}}">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<div id="app">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <img src="logo.png" alt="logo" style="width:4%">
+                </li>
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav mr-5 ml-5 pl-5">
+                <li>
+                    <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm ml-3 w-95" type="text" placeholder="Search"
+                               aria-label="Search">
+                    </form>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-5">
+                <li class="nav-item">
+                    <i class="fas fa-plus"></i>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-5">
+                <!-- Authentication Links -->
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
                         <li class="nav-item">
-                            <img src="logo.png" alt="logo" style="width:4%">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a>
                         </li>
-                    </ul>
+                    @endif
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fas fa-user"></i>
+                        </a>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav mr-5 ml-5 pl-5">
-                        <li>
-                            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                                <input class="form-control form-control-sm ml-3 w-95" type="text" placeholder="Search"
-                                       aria-label="Search">
-                            </form>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav mr-5">
-                        <li class="nav-item">
-                            <i class="fas fa-plus"></i>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav mr-5">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fas fa-user"></i>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar sesión') }}
-                                    </a>
+                                {{ __('Cerrar sesión') }}
+                            </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                    </ul>
-                    <ul class="navbar-nav mr-5">
-                        <li class="nav-item dropdown">
-                            <i class="fas fa-heart"></i>
-                        </li>
-                    </ul>
-                    @endguest
-                </div>
-        </nav>
-        <main class="">
-            @yield('content')
-        </main>
-    </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+            </ul>
+            <ul class="navbar-nav mr-5">
+                <li class="nav-item dropdown">
+                    <i class="fas fa-heart"></i>
+                </li>
+            </ul>
+            @endguest
+        </div>
+    </nav>
+    <main class="">
+        @yield('content')
+    </main>
+</div>
 </body>
 </html>
+
