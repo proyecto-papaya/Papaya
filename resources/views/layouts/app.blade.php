@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Papaya</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -29,22 +29,35 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <img src="logo.png" alt="logo" style="width:4%">
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav mr-5 ml-5 pl-5">
+                        <li>
+                            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                <input class="form-control form-control-sm ml-3 w-95" type="text" placeholder="Search"
+                                       aria-label="Search">
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-5">
+                        <li class="nav-item">
+                            <i class="fas fa-plus"></i>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-5">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -57,15 +70,15 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fas fa-user"></i>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar sesión') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -73,12 +86,15 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
                     </ul>
+                    <ul class="navbar-nav mr-5">
+                        <li class="nav-item dropdown">
+                            <i class="fas fa-heart"></i>
+                        </li>
+                    </ul>
+                    @endguest
                 </div>
-            </div>
         </nav>
-
         <main class="">
             @yield('content')
         </main>
