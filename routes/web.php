@@ -23,13 +23,11 @@ Route::get('formPost','PostController@showForm');
 
 Route::post('createPost','PostController@createPost');
 
+Route::get('formPostEditar{id_post}','PostController@showFormEditar');
+
+Route::put('updatePost{id}','PostController@updatePost');
 /////////////////////777777777777777777777777777777/////////////////////////
 
 Route::get('deletePost{id}', 'PostController@deletePost');
 
-//Mostrar home (falta middleware)
-Route::get('/','HomeController@showHome')->name("home");
-Route::get('/pages','HomeController@paginacion');
 
-//Mostrar detalle de Post
-Route::get('/p/{id}','PostController@showDetail');
