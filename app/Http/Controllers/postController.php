@@ -36,7 +36,7 @@ class postController extends Controller
 
     public function showHome(){
         //paginate() sólo se puede usar sobre una query, no una Collection
-        $posts = Post::paginate(4)->sortByDesc('created_at');
+        $posts = Post::paginate(3)->sortByDesc('created_at');
 
         $random_posts = DB::table('posts')
                         ->inRandomOrder()
@@ -48,7 +48,7 @@ class postController extends Controller
 
     public function paginacion(){
         //paginate() sólo se puede usar sobre una query, no una Collection
-        $posts = Post::paginate(4)->sortByDesc('created_at');
+        $posts = Post::paginate(3)->sortByDesc('created_at');
 
         return view("posts._cards", compact("posts"));
     }

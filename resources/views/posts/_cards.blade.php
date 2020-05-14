@@ -4,8 +4,8 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <div class="card-title justify-content-around">
-                        <div class="h3 p-2">{{$post->title}} </div>
-                        <img src="{{$post->user->profile_picture}}" alt="" class="rounded-circle">
+                        <div class="h3 p-2"><a href="#">{{$post->title}}</a></div>
+                        <a href="#"><img src="{{$post->user->profile_picture}}" alt="" class="rounded-circle"></a>
                     </div>
 
                     <div class="card-text">{{$post->text}}</div>
