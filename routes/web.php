@@ -17,11 +17,12 @@ Auth::routes();
 
 ////////////RUTAS CARLOS/////////////////////////////////////////
 
-Route::get('formPost','PostController@showForm');
+Route::get('formPost','postController@showForm');
 
-Route::post('createPost','PostController@createPost');
+Route::post('createPost','postController@createPost');
 
 /////////////////////777777777777777777777777777777/////////////////////////
 
 //Mostrar home (falta middleware)
-Route::get('/','PostController@showHome');
+Route::get('/','postController@showHome');
+Route::get('/pages','postController@paginacion');

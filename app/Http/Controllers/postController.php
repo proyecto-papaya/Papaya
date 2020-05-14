@@ -34,15 +34,15 @@ class postController extends Controller
 
     public function showHome(){
         //paginate() sólo se puede usar sobre una query, no una Collection
-        $posts = Post::paginate(8)->sortByDesc('created_at');
+        $posts = Post::paginate(4)->sortByDesc('created_at');
 
         return view("home", compact("posts"));
     }
 
     public function paginacion(){
         //paginate() sólo se puede usar sobre una query, no una Collection
-        $posts = Post::paginate(8)->sortByDesc('created_at');
+        $posts = Post::paginate(4)->sortByDesc('created_at');
 
-        return view("home", compact("posts"));
+        return view("posts._cards", compact("posts"));
     }
 }

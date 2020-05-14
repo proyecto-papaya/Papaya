@@ -4,16 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div id="posts" class="col-md-8">
-            @if(count($posts))
-                @foreach($posts as $post)
-                    <div class="card p-5">
-                        <div class="card-title">{{$post->title}}</div>
-                    </div>
-                @endforeach
-            <div class="loading"></div>
-            @else
-                <p>Todavía no hay ningún post.</p>
-            @endif
+            @include("posts._cards")
         </div>
         <div class="col-md-2">
             AQUI VAN LAS SUGERENCIAS.
@@ -24,8 +15,6 @@
 
 <script type="application/javascript">
 
-    //document.addEventListener(window, infiniteScroll);
-
     window.onscroll = ()=>{
         let pagina = 2
 
@@ -33,7 +22,7 @@
 
             console.log("FUNCIONA")
 
-            fetch(`/?page=${pagina}`, {
+            fetch(`/pages?page=${pagina}`, {
                 method: 'get'
             })
             .then(response => response.text())
