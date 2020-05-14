@@ -37,8 +37,17 @@ class PostController extends Controller
         return redirect()->route('home');
     }
 
-<<<<<<< HEAD
-=======
+    /**
+     * Recibe un id y devuelve un objeto con el Post que tenga ese id
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showDetail($id){
+        $post = Post::findOrFail($id);
+        return view("posts.detail", compact("post"));
+
+
     public function showFormEditar($id) {
         $post=Post::query()
             ->where('id', $id)
@@ -47,7 +56,6 @@ class PostController extends Controller
             ->where('post_id', $id)
             ->first();
         return view("posts.formulario_editar_post",compact('post'),compact('file'));
->>>>>>> 401c11571499afba4c5fc55e5ecc9e9a124b2396
     }
 
     public function deletePost($id)
