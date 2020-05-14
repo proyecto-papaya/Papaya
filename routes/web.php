@@ -15,20 +15,20 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', 'postController@showHome')->name('home');
+Route::get('/home', 'PostController@showHome')->name('home');
 
 ////////////RUTAS CARLOS/////////////////////////////////////////
 
-Route::get('formPost','postController@showForm');
+Route::get('formPost','PostController@showForm');
 
-Route::post('createPost','postController@createPost');
+Route::post('createPost','PostController@createPost');
 
-Route::get('formPostEditar{id_post}','postController@showFormEditar');
+Route::get('formPostEditar{id_post}','PostController@showFormEditar');
 
-Route::put('updatePost{id}','postController@updatePost');
+Route::put('updatePost{id}','PostController@updatePost');
 /////////////////////777777777777777777777777777777/////////////////////////
 
 //Mostrar home (falta middleware)
-Route::get('/','postController@showHome')->name("home");
+Route::get('/','PostController@showHome')->name("home");
 
-Route::get('/pages','postController@paginacion');
+Route::get('/pages','PostController@paginacion');
