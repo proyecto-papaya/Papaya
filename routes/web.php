@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', 'PostController@showHome')->name('home');
+Route::get('/home', 'HomeController@showHome')->name('home');
 
 ////////////RUTAS CARLOS/////////////////////////////////////////
 
