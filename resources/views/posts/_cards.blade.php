@@ -1,7 +1,7 @@
 
     @if(count($posts))
         @foreach($posts as $post)
-            <div class="card mb-3">
+            <div class="card mt-3">
                 <div class="card-body">
                     <div class="card-title justify-content-around">
                         <div class="h3 p-2"><a href="#">{{$post->title}}</a></div>
@@ -22,6 +22,6 @@
         @endforeach
         <div class="loading"></div>
     @else
-        <p>Todavía no hay ningún post.</p>
+        <p class="mt-5 ml-5">No hay más posts.</p>
     @endif
 

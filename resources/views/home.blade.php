@@ -15,20 +15,19 @@
 </div>
 
 <script type="application/javascript">
-
+    var pagina = 2
     window.onscroll = ()=>{
-        let pagina = 2
-
-        if((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight){
-
+        if((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2){
             fetch(`/pages?page=${pagina}`, {
                 method: 'get'
             })
             .then(response => response.text())
             .then(html => {
                 document.getElementById('posts').innerHTML += html
+                pagina ++;
             })
             .catch(error=> console.log(error))
+
         }
     }
 
