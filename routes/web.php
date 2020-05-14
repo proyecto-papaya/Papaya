@@ -25,4 +25,3 @@ Route::post('createPost','PostController@createPost');
 
 //Mostrar home (falta middleware)
 Route::get('/','PostController@showHome');
-Route::get('nombres/paginacion{num}', 'PostController@paginacion');

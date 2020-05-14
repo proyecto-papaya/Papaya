@@ -33,7 +33,7 @@
 
             console.log("FUNCIONA")
 
-            fetch(`/nombres/paginacion?page=${pagina}`, {
+            fetch(`/?page=${pagina}`, {
                 method: 'get'
             })
             .then(response => response.text())
