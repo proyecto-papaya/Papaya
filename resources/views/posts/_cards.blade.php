@@ -8,13 +8,14 @@
                         <a href="#"><img src="{{$post->user->profile_picture}}" alt="" class="rounded-circle"></a>
                     </div>
 
-                    <div class="card-text">{{$post->text}}</div>
+                    <div class="card-text mb-3">{{$post->text}}</div>
                     <div class="card-text row justify-content-between">
-                        <div class="col-11">
-                            <img src="#" alt="" class="col-1">
+                        <div class="col-11 row">
+                            <i class="fas fa-file-pdf col-1"></i>
                             <div class="h6 col-3">{{$post->date()}}</div>
                         </div>
-                        <i class="far fa-heart col mt-4"></i>
+                        <i class="far fa-heart col-1"></i>
+
                     </div>
                 </div>
             </div>
