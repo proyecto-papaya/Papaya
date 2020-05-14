@@ -2,13 +2,19 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div id="posts" class="col-md-8">
+    <div class="row justify-content-center mt-2">
+        <div id="posts" class="col-md-8" style="margin-right: 15em">
             @include("posts._cards")
         </div>
-        <div class="col-md-2">
-            AQUI VAN LAS SUGERENCIAS.
-            Deberían ser position absolute o algo para que no se muevan con el scroll.
+        <div class="col-md-3 position-fixed" style="margin-left: 50em">
+            <div class="jumbotron">
+                <h5>Descubre</h5>
+                <ul>
+                    @foreach($posts as $post)
+                        <li>{{$post->title}}</li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -19,8 +25,6 @@
         let pagina = 2
 
         if((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight){
-
-            console.log("FUNCIONA")
 
             fetch(`/pages?page=${pagina}`, {
                 method: 'get'
