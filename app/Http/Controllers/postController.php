@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Archivo;
+use Illuminate\Support\Facades\DB;
+
 class postController extends Controller
 {
     public function showForm() {
@@ -36,7 +38,12 @@ class postController extends Controller
         //paginate() sólo se puede usar sobre una query, no una Collection
         $posts = Post::paginate(4)->sortByDesc('created_at');
 
-        return view("home", compact("posts"));
+        $random_posts = DB::table('posts')
+                        ->inRandomOrder()
+                        ->take(10)
+                        ->get();
+
+        return view("home", compact("posts","random_posts"));
     }
 
     public function paginacion(){

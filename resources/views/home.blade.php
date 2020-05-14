@@ -3,17 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center mt-2">
-        <div id="posts" class="col-md-8" style="margin-right: 15em">
+        <div id="posts" class="col-md-12 col-xl-8" style="margin-right: 15em">
             @include("posts._cards")
         </div>
         <div class="col-md-3 position-fixed" style="margin-left: 50em">
             <div class="jumbotron">
-                <h5>Descubre</h5>
-                <ul>
-                    @foreach($posts as $post)
-                        <li>{{$post->title}}</li>
-                    @endforeach
-                </ul>
+                @include("posts._discover")
             </div>
         </div>
     </div>
