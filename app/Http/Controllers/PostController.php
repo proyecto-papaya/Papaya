@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Archivo;
-use Illuminate\Support\Facades\DB;
 
-class postController extends Controller
+
+class PostController extends Controller
 {
     public function showForm() {
         return view("posts.formulario_crear_post");
@@ -41,4 +41,11 @@ class postController extends Controller
         return view("eventoForm",compact('detalle'));
     }
 
+    public function deletePost($id)
+    {
+        $post = post::query()
+            ->where('id', $id)
+            ->first();
+        $post->delete();
+    }
 }
