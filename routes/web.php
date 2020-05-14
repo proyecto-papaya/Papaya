@@ -23,6 +23,9 @@ Route::get('formPost','postController@showForm');
 
 Route::post('createPost','postController@createPost');
 
+Route::get('formPostEditar{id_post}','postController@showFormEditar');
+
+Route::put('updatePost{id}','postController@updatePost');
 /////////////////////777777777777777777777777777777/////////////////////////
 
 //Mostrar home (falta middleware)
