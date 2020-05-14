@@ -62,4 +62,16 @@ class Post extends Model
         return $this->belongsToMany('App\Tag');
     }
 
+
+    public function date(){
+        $str = $this->created_at;
+        $array = explode(" ",$str);
+
+        $date = $array[0];
+
+        $date_array = explode("-",$date);
+
+        $date = $date_array[2]."/".$date_array[1]."/".$date_array[0];
+        return $date;
+    }
 }
