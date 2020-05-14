@@ -31,4 +31,15 @@ class postController extends Controller
         $file->save();
         return redirect()->route('home');
     }
+
+    public function deletePost($id){
+
+        $post = post::query()
+            ->where('id', $id)
+            ->first();
+
+        $post->delete();
+
+      //  return redirect()->route('home');
+    }
 }
