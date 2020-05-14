@@ -34,6 +34,18 @@ class postController extends Controller
         return redirect()->route('home');
     }
 
+
+    /**
+     * Recibe un id y devuelve un objeto con el Post que tenga ese id
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showDetail($id){
+        $post = Post::findOrFail($id);
+        return view("posts.detail", compact("post"));
+    }
+
     public function deletePost($id)
     {
         $post = post::query()
