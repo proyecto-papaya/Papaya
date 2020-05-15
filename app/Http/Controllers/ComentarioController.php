@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Comentario;
+use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ComentarioController extends Controller
 {
@@ -31,12 +33,25 @@ class ComentarioController extends Controller
      * Guardar un nuevo Comentario en la tabla comentarios
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function store(Request $request, $post_id)
     {
+       //Guardar el comentario en la tabla
         $comentario = New Comentario;
         $user_id = Auth::user()->id;
+
+        $comentario->user_id = $user_id;
+        $comentario->post_id = $post_id;
+        $comentario->text = $request->text;
+
+        $comentario->save();
+
+        //Devolver la vista del post en el que estábamos
+        $post = Post::findOrFail($post_id);
+        $comments = $post->comentarios;
+
+        return view("posts.detail", compact("post","comments"));
 
     }
 
