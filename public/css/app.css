@@ -72,7 +72,7 @@ body {
     line-height: 1.6;
     color: #212529;
     text-align: left;
-    background-color: #f8fafc;
+    background-color: #FFF9F3;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -2184,9 +2184,9 @@ pre code {
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #a1cbef;
+
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(126, 89, 52, 0.25);
 }
 
 .form-control::-webkit-input-placeholder {
@@ -2700,6 +2700,10 @@ fieldset:disabled a.btn {
     color: #fff;
     background-color: #3490dc;
     border-color: #3490dc;
+}
+
+.btn-buttons{
+    color: #f67f21;
 }
 
 .btn-primary:hover {
@@ -10711,6 +10715,14 @@ a.text-primary:focus {
     color: #6c757d !important;
 }
 
+.text-button{
+    color: #7E5934 !important;
+}
+
+.text-submit{
+    color: #f67f21 !important;
+}
+
 a.text-secondary:hover,
 a.text-secondary:focus {
     color: #494f54 !important;
@@ -10735,7 +10747,7 @@ a.text-info:focus {
 }
 
 .text-warning {
-    color: #ffed4a !important;
+    color: #f67f21 !important;
 }
 
 a.text-warning:hover,
