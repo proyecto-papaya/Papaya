@@ -10,7 +10,10 @@ Una vez clonado, desde la carpeta del proyecto, tendremos que instalar las depen
 * `composer install`
 * `cp .env.example .env`
 * `php artisan key:generate`
+* `php artisan storage:link`
 
+Para que funcione bien el sistema de login tenemos que cambiar la L153 de `vendor/ui/auth-backend/AuthenticateUsers`
+y poner `return name;`.
 
 Para lanzarlo al navegador con artisan:
 
