@@ -30,7 +30,7 @@
         <div class="row mt-3 mb-3">
             <div class="col-11">
                 @if( $post->archivos->first() != null)
-                    <img src="{{storage_path()}}/app/{{ $post->archivos->first()->path }}" alt="">
+                    <img src="{{Storage::url($post->archivos->first()->path)}}">
                 @else
                     <img src="{{ asset('images/logo_sin_letras.png') }}" alt="" style="height: 20em" class="mx-auto d-block">
                 @endif
