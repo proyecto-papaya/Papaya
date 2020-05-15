@@ -40,4 +40,4 @@ Route::get('/pages','HomeController@paginacion');
 Route::get('/p/{id}','PostController@showDetail');
 
 //Descargar archivo
-Route::get('/download/{id}','ArchivosController@download');
+Route::get('/download/{id}','ArchivoController@download');

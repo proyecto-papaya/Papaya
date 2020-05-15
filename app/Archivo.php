@@ -30,4 +30,11 @@ class Archivo extends Model
     public function post(){
         return $this->belongsTo('App\Post');
     }
+
+    public function basename(){
+        $str = $this->path;
+        $array = explode("/",$str);
+
+        return $array[count($array)-1];
+    }
 }

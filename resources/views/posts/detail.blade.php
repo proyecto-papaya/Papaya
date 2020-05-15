@@ -39,7 +39,7 @@
                 <div class="col-1">
                     <i class="fas fa-ellipsis-h" onclick="show()"></i>
                     <ul id="dropdown" class="d-none">
-                        <li class="list-unstyled">Descargar</li>
+                        <li class="list-unstyled"><a href="/download/{{$post->archivos->first()->id}}">Descargar</a></li>
                         <li class="list-unstyled">Editar</li>
                         <li class="list-unstyled">Eliminar</li>
                     </ul>
@@ -49,7 +49,7 @@
 
         @if($post->user->name != Auth::user()->name)
             <div class="row justify-content-center">
-                <button class="btn btn-dark col-6" type="button" href="/download/{{$post->archivo->id}}">DESCARGAR</button>
+                <button class="btn btn-dark col-6" type="button" href="/download/{{$post->archivos->first()->id}}">DESCARGAR</button>
             </div>
         @endif
 
