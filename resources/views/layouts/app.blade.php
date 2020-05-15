@@ -29,38 +29,33 @@
 <body>
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <a class="navbar-brand" href="/">
+            <img src="logo.svg" alt="logo" style="width:8%;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <img src="logo.png" alt="logo" style="width:4%">
-                </li>
-            </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav mr-5 ml-5 pl-5">
-                <li>
-                    <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                        <input class="form-control form-control-sm ml-3 w-95" type="text" placeholder="Search"
+            <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+                <li class="nav-item m-auto">
+                    <form class="form-inline">
+                        <i class="fas fa-search d-none d-sm-block" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm ml-4 w-85" type="text" placeholder="Buscador"
                                aria-label="Search">
                     </form>
                 </li>
-            </ul>
-            <ul class="navbar-nav mr-5">
-                <li class="nav-item">
-                    <i class="fas fa-plus"></i>
+
+                <li class="nav-item m-auto pl-3">
+                    <i class="fas fa-plus">
+                    </i>
                 </li>
-            </ul>
-            <ul class="navbar-nav mr-5">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item">
+                    <li class="nav-item m-auto pl-3">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
@@ -69,7 +64,7 @@
                         </li>
                     @endif
                 @else
-                    <li class="nav-item dropdown">
+                    <li class="nav-item m-auto pl-3">
                         <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <i class="fas fa-user"></i>
                         </a>
@@ -86,13 +81,13 @@
                             </form>
                         </div>
                     </li>
-            </ul>
-            <ul class="navbar-nav mr-5">
-                <li class="nav-item dropdown">
+
+                <li class="nav-item m-auto pl-3 pr-3">
                     <i class="fas fa-heart"></i>
                 </li>
-            </ul>
+
             @endguest
+            </ul>
         </div>
     </nav>
     <main class="">
