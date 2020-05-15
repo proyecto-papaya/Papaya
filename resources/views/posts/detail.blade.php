@@ -49,7 +49,7 @@
 
         @if($post->user->name != Auth::user()->name)
             <div class="row justify-content-center">
-                <div class="btn btn-dark col-6">DESCARGAR</div>
+                <button class="btn btn-dark col-6" type="button" href="/download/{{$post->archivo->id}}">DESCARGAR</button>
             </div>
         @endif
 
