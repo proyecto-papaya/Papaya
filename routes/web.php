@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', 'PostController@showHome')->name('home');
+Route::get('/home', 'HomeController@showHome')->name('home');
 
 ////////////RUTAS CARLOS/////////////////////////////////////////
 
@@ -30,4 +30,11 @@ Route::put('updatePost{id}','PostController@updatePost');
 
 Route::get('deletePost{id}', 'PostController@deletePost');
 
-//Mostrar home (falta middleware)
+//Mostrar home (Falta middleware)
+Route::get('/','HomeController@showHome');
+
+//Paginación asíncrona
+Route::get('/pages','HomeController@paginacion');
+
+//Mostrar detalle de Post
+Route::get('/p/{id}','PostController@showDetail');
