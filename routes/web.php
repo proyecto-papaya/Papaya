@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@showHome')->name('home');
 
 ////////////RUTAS CARLOS/////////////////////////////////////////
 
-Route::get('formPost','PostController@showForm');
+Route::get('formPost','PostController@showForm')->name('showForm');
 
 Route::post('createPost','PostController@createPost');
 
