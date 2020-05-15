@@ -46,7 +46,9 @@ class PostController extends Controller
     public function showDetail($id)
     {
         $post = Post::findOrFail($id);
-        return view("posts.detail", compact("post"));
+        $comments = $post->comentarios;
+
+        return view("posts.detail", compact("post","comments"));
     }
 
     public function showFormEditar($id) {
