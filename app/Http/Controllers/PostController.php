@@ -43,10 +43,11 @@ class PostController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function showDetail($id){
+    public function showDetail($id)
+    {
         $post = Post::findOrFail($id);
         return view("posts.detail", compact("post"));
-
+    }
 
     public function showFormEditar($id) {
         $post=Post::query()

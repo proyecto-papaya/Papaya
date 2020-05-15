@@ -30,6 +30,9 @@ Route::put('updatePost{id}','PostController@updatePost');
 
 Route::get('deletePost{id}', 'PostController@deletePost');
 
+//Mostrar home (Falta middleware)
+Route::get('/','HomeController@showHome');
+
 //Paginación asíncrona
 Route::get('/pages','HomeController@paginacion');
 
