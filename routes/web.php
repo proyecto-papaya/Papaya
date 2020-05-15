@@ -38,3 +38,6 @@ Route::get('/pages','HomeController@paginacion');
 
 //Mostrar detalle de Post
 Route::get('/p/{id}','PostController@showDetail');
+
+//Descargar archivo
+Route::get('/download/{id}','ArchivoController@download');
