@@ -67,7 +67,7 @@
             @endif
         </div>
         <div class="row">
-            <form class="form-horizontal" method="post" action="/comment" enctype="multipart/form-data">
+            <form class="form-horizontal" method="post" action="/comment/{{$post->id}}" enctype="multipart/form-data">
                 @csrf
                 <label class="mr-3 mb-3" for="comment">
                     @if($post->user->profile_picture)

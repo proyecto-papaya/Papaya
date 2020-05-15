@@ -40,4 +40,4 @@ Route::get('/pages','HomeController@paginacion');
 Route::get('/p/{id}','PostController@showDetail');
 
 //Añadir comentario
-Route::post('/comment',"ComentarioController@store");
+Route::post('/comment/{id}',"ComentarioController@store");

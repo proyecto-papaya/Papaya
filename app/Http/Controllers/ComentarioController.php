@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comentario;
 use Illuminate\Http\Request;
 
 class ComentarioController extends Controller
@@ -27,14 +28,16 @@ class ComentarioController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Guardar un nuevo Comentario en la tabla comentarios
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $post_id)
     {
-        //
+        $comentario = New Comentario;
+        $user_id = Auth::user()->id;
+
     }
 
     /**
