@@ -28,7 +28,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm mb-4">
         <a class="navbar-brand" href="/">
             <img src="/logo.svg" alt="logo" style="width:3em;" class="ml-1">
         </a>
@@ -42,33 +42,32 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
                 <li class="nav-item m-auto">
-                    <form class="form-inline">
-                        <i class="fas fa-search d-none d-sm-block text-button" aria-hidden="true"></i>
-                        <input class="form-control form-control-sm ml-4 w-85" type="text" placeholder="Buscador"
-                               aria-label="Search">
-                    </form>
+                    <div class="form-group has-search m-auto">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control" placeholder="Buscador">
+                    </div>
                 </li>
 
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item m-auto pl-3">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link text-marron" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a>
+                            <a class="nav-link text-marron" href="{{ route('register') }}">{{ __('Registro') }}</a>
                         </li>
                     @endif
                 @else
                     <li class="nav-item m-auto pl-3">
                         <a class="nav-link" href="{{ route('showForm') }}">
-                        <i class="fas fa-plus text-button">
+                        <i class="fas fa-plus text-marron">
                         </i>
                         </a>
                     </li>
                     <li class="nav-item m-auto pl-3">
                         <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <i class="fas fa-user text-button"></i>
+                            <i class="fas fa-user text-marron"></i>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -85,7 +84,7 @@
                     </li>
 
                     <li class="nav-item m-auto pl-3 pr-3">
-                        <i class="fas fa-heart text-button"></i>
+                        <i class="fas fa-heart text-marron"></i>
                     </li>
 
                 @endguest

@@ -27,7 +27,7 @@
                 <input type="file" required class="form-control-file" id="file" value='' name="file">
             </div>
 
-            <button type="submit" style="background-color:#f67f21" class="btn btn-block font-weight-bolder ">Subir</button>
+            <button type="submit" class="btn btn-block btn-papaya font-weight-bolder ">Subir</button>
     </form>
 </div>
 @endsection
