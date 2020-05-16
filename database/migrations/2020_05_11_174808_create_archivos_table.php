@@ -20,6 +20,8 @@ class CreateArchivosTable extends Migration
 
             $table->string('name');
             $table->string('path');
+            $table->string('type');
+            $table->string('icon');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
