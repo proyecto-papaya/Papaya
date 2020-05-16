@@ -18,3 +18,15 @@ y poner `return name;`.
 Para lanzarlo al navegador con artisan:
 
 `php artisan serve`
+
+Para agregar una foto de perfil por defecto al registrarse:
+Hay que ir al archivo:
+vendor/laravel/framework/src/Illuminate/Auth/Events/Registered.php
+y editar la funcion __construct de esta forma:
+
+public function __construct($user)
+{
+$this->user = $user;
+$this->user->profile_picture="images/user.png";
+$this->user->save();
+}

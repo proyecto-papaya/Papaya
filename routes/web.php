@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@showHome')->name('home');
 
 ////////////RUTAS CARLOS/////////////////////////////////////////
 
-Route::get('formPost','PostController@showForm');
+Route::get('formPost','PostController@showForm')->name('showForm');
 
 Route::post('createPost','PostController@createPost');
 
@@ -39,5 +39,10 @@ Route::get('/pages','HomeController@paginacion');
 //Mostrar detalle de Post
 Route::get('/p/{id}','PostController@showDetail');
 
+<<<<<<< HEAD
 //Añadir comentario
 Route::post('/comment/{id}',"ComentarioController@store");
+=======
+//Descargar archivo
+Route::get('/download/{id}','ArchivoController@download');
+>>>>>>> 7edc0674fdcd3f6de63b6d98aab7d00bb3580622

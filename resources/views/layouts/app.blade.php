@@ -30,7 +30,7 @@
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <a class="navbar-brand" href="/">
-            <img src="logo.svg" alt="logo" style="width:8%;">
+            <img src="/logo.svg" alt="logo" style="width:3em;" class="ml-1">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,16 +43,12 @@
             <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
                 <li class="nav-item m-auto">
                     <form class="form-inline">
-                        <i class="fas fa-search d-none d-sm-block" aria-hidden="true"></i>
+                        <i class="fas fa-search d-none d-sm-block text-button" aria-hidden="true"></i>
                         <input class="form-control form-control-sm ml-4 w-85" type="text" placeholder="Buscador"
                                aria-label="Search">
                     </form>
                 </li>
 
-                <li class="nav-item m-auto pl-3">
-                    <i class="fas fa-plus">
-                    </i>
-                </li>
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item m-auto pl-3">
@@ -65,8 +61,14 @@
                     @endif
                 @else
                     <li class="nav-item m-auto pl-3">
+                        <a class="nav-link" href="{{ route('showForm') }}">
+                        <i class="fas fa-plus text-button">
+                        </i>
+                        </a>
+                    </li>
+                    <li class="nav-item m-auto pl-3">
                         <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <i class="fas fa-user"></i>
+                            <i class="fas fa-user text-button"></i>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -83,7 +85,7 @@
                     </li>
 
                     <li class="nav-item m-auto pl-3 pr-3">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart text-button"></i>
                     </li>
 
                 @endguest
