@@ -59,26 +59,27 @@
             </div>
         </div>
 
-        <div class="row mt-5">
-            @if(count($comments))
-                @foreach($comments as $comment)
-                    @include('posts._comment')
-                @endforeach
-            @endif
-        </div>
-        <div class="row">
-            <form class="form-horizontal" method="post" action="/comment/{{$post->id}}" enctype="multipart/form-data">
+        <div class="row  mt-5">
+            <form class="form-horizontal col-12" method="post" action="/comment/{{$post->id}}" enctype="multipart/form-data">
                 @csrf
                 <label class="mr-3 mb-3" for="comment">
                     @if($post->user->profile_picture)
                         <img src="{{$post->user->profile_picture}}" alt="" class="rounded-circle col-1">
                     @else
-                        <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-2" style="width: 2em">                @endif
+                        <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-2" style="width: 2em">
+                    @endif
                 </label>
-                <textarea class="col-8 h-25 rounded-top" name="text" id="comment" cols="30" rows="10" required placeholder="Haz un comentario"></textarea>
-                <button class="col-3 btn btn-dark" type="submit">COMENTA</button>
+                <textarea class="col-8 rounded-top" name="text" id="comment" cols="30" rows="10" required placeholder="Haz un comentario" style="height: 2em"></textarea>
+                <button class="col-2 btn" type="submit">COMENTA</button>
             </form>
         </div>
+
+            @if(count($comments))
+                @foreach($comments as $comment)
+                    @include('posts._comment')
+                @endforeach
+            @endif
+
     </div>
 
     <script type="application/javascript">
