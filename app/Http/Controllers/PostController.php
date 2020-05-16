@@ -24,9 +24,13 @@ class PostController extends Controller
 
         $post->save();
 
+
         if(isset($request->file)){
             $file = new Archivo();
             $file->name=$request->file("file")->getClientOriginalName();
+
+            $file->type = $file->archivo_type();
+            $file->icon = $file->icon();
 
             $file->path=$request->file("file")->store("public");
             $file->user_id=auth()->id();
