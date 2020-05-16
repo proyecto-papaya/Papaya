@@ -5,7 +5,7 @@
         <div id="posts" class="col-12 col-lg-8 mr-0 mr-sm-5">
             @include("posts._cards")
         </div>
-        <div class="col-lg-3 d-none d-lg-block border border-dark text-center h-75">
+        <div class="col-lg-3 d-none d-lg-block border text-center h-75 descubre">
             @include("posts._discover")
         </div>
     </div>

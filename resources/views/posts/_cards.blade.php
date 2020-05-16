@@ -4,7 +4,7 @@
             <div class="card mt-3">
                 <div class="card-body">
                     <div class="card-title justify-content-around">
-                        <div class="h3 p-2"><a href="/p/{{$post->id}}">{{$post->title}}</a></div>
+                        <div class="h3 p-2"><a class="text-papaya" href="/p/{{$post->id}}">{{$post->title}}</a></div>
                         <a href="#"><img src="{{$post->user->profile_picture}}" alt="" class="rounded-circle"></a>
                     </div>
 
