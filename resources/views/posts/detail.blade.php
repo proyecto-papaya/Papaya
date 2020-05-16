@@ -67,7 +67,7 @@
             @endif
         </div>
         <div class="row">
-            <form class="form-horizontal" method="post" action="/comment" enctype="multipart/form-data">
+            <form class="form-horizontal" method="post" action="/comment/{{$post->id}}" enctype="multipart/form-data">
                 @csrf
                 <label class="mr-3 mb-3" for="comment">
                     @if($post->user->profile_picture)
@@ -75,7 +75,7 @@
                     @else
                         <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-2" style="width: 2em">                @endif
                 </label>
-                <textarea class="col-8 h-25 rounded-top" name="comment" id="comment" cols="30" rows="10" required placeholder="Haz un comentario"></textarea>
+                <textarea class="col-8 h-25 rounded-top" name="text" id="comment" cols="30" rows="10" required placeholder="Haz un comentario"></textarea>
                 <button class="col-3 btn btn-dark" type="submit">COMENTA</button>
             </form>
         </div>
