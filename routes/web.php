@@ -39,5 +39,8 @@ Route::get('/pages','HomeController@paginacion');
 //Mostrar detalle de Post
 Route::get('/p/{id}','PostController@showDetail');
 
+//Añadir comentario
+Route::post('/comment/{id}',"ComentarioController@store");
+
 //Descargar archivo
 Route::get('/download/{id}','ArchivoController@download');
