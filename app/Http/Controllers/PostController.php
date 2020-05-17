@@ -95,6 +95,8 @@ class PostController extends Controller
             }
 
             $file->name=$request->file("file")->getClientOriginalName();
+            $file->type = $file->archivo_type();
+            $file->icon = $file->icon();
             $file->path=$request->file("file")->store("public");
 
             $file->save();
