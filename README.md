@@ -19,9 +19,21 @@ Una vez clonado, desde la carpeta del proyecto, tendremos que instalar las depen
 
 * `composer require laravel/ui --dev`
 * `composer install`
-* `cp .env.example .env` y configurar con la base de datos que se quiera
 * `php artisan key:generate`
 * `php artisan storage:link`
+
+## Base de datos
+
+Para configurar la base de datos copiar el `.env.example` con `cp .env.example .env`, tendremos que setear las siguientes variables de entorno:
+
+* `DB_CONNECTION` -> tipo de base de datos, nosotras utilizamos mysql
+* `DB_HOST`-> endpoint de nuestra base de datos
+* `DB_PORT`-> puerto de nuestra base de datos. En mysql, 3306.
+* `DB_DATABASE`-> nombre de nuestra base de datos
+* `DB_USERNAME` -> nombre de usuaria con el que nos conectaremos a la base de datos
+* `DB_PASSWORD` -> contraseña de la base de datos
+
+También es importante recordar la variable `APP_DEBUG` que en desarrollo tendrá que estar seteada a `true` pero en producción siempre en `false`. Si no lo hiciéramos así, nos arriesgamos a exponer información sensible y esto hace nuestra aplicación menos segura.
 
 ## Sobreescribiendo el auth de Laravel
 
