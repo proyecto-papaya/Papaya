@@ -20,7 +20,8 @@
             })
             .then(response => response.text())
             .then(html => {
-                document.getElementById('posts').innerHTML += html
+                if(document.getElementById('upsi')==null){
+                document.getElementById('posts').innerHTML += html}
                 pagina ++;
             })
             .catch(error=> console.log(error))
