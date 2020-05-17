@@ -1,13 +1,15 @@
-# Papaya - WIP
+# Papaya - WIP :test_tube:
 
-Papaya es el proyecto final de DAW de @anmacovei, @juancarlosfcxp y @mperezv.
+Papaya es el proyecto final de DAW de [anmacovei](https://github.com/anmacovei), [juancarlosfcxp](https://github.com/juancarlosfcxp) y [mperezv](https://github.com/mperezv/).
+
+<img src="https://github.com/proyecto-papaya/Papaya/blob/master/public/logo.svg" alt="drawing" width="200"/>
 
 El objetivo es que sea una aplicación web para compartir archivos de distintos tipos en forma de post, y que el resto de usuarias puedan descargarlos en sus máquinas o verlos/escucharlos en la plataforma.
 
 Actualmente, no tenemos un sistema de containers que permita configurar el entorno de desarrollo de una manera sencilla porque no hemos tenido el tiempo para montarlo. Por eso las instrucciones para descargar y ejecutar el proyecto pueden ser un poco estrafalarias, o largas. Esperamos mejorar esta parte en un futuro y así facilitar las contribuiciones externas a nuestro proyecto.
 
 
-# Descargar y ejecutar el proyecto
+# Descargar y ejecutar el proyecto :pick: :wrench: :nerd_face:
 
 Antes que nada, la máquina en la que clonemos el proyecto tendrá que tener instalado Laravel.
 
