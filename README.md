@@ -29,10 +29,11 @@ Para que funcione bien el sistema de login tenemos que cambiar la L153 de `vendo
 y poner `return name;`.
 
 Hay que ir al archivo:
-```
-vendor/laravel/framework/src/Illuminate/Auth/Events/Registered.php
-y editar la funcion __construct de esta forma:
+`
+vendor/laravel/framework/src/Illuminate/Auth/Events/Registered.php` 
+y editar la funcion` __construct` de esta forma:
 
+```php
 public function __construct($user)
 {
 $this->user = $user;
