@@ -92,8 +92,39 @@
         </div>
     </nav>
     <main class="">
+        <div id="loading-container" style="
+            background-color: #2fa360;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: 10000;
+          ">
+            <div id="loading">
+                <img src="{{asset('images/papaya_loading.gif')}}" alt="" style="
+                    height: 8em;
+                    width: 8em;
+                    border-radius: 20%;
+
+                    position:absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                ">
+            </div>
+        </div>
         @yield('content')
     </main>
+
+    <script>
+        window.onload = function(){
+            var contenedor = document.getElementById('loading-container');
+
+            contenedor.style.opacity = 0;
+            contenedor.style.transition =".4s ease-in 4s";
+        }
+    </script>
 </div>
 </body>
 </html>
