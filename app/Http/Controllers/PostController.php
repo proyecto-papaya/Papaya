@@ -71,6 +71,7 @@ class PostController extends Controller
             ->where('id', $id)
             ->first();
         $post->delete();
+        return redirect()->route('home');
     }
 
     public function updatePost($id,Request $request) {
