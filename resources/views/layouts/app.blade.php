@@ -121,6 +121,7 @@
         window.onload = function(){
             var contenedor = document.getElementById('loading-container');
 
+            contenedor.style.visibility = "hidden";
             contenedor.style.opacity = 0;
             contenedor.style.transition =".4s ease-in 4s";
         }
