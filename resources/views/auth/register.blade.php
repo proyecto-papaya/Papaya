@@ -37,6 +37,9 @@
                                     </span>
                                 @enderror
                             </div>
+                            <div class="col-md-8 ml-5">
+                                <small class="ml-5">En Papaya no es obligatorio aportar un email.</small>
+                            </div>
                         </div>
 
                         <div class="form-group row">
