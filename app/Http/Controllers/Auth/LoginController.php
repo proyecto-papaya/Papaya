@@ -39,9 +39,9 @@ class LoginController extends Controller
     }
 
 
-    public function name()
+    public function username()
     {
-        return $this->name;
+        return 'name';
     }
 
 
