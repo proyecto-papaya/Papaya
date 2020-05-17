@@ -22,8 +22,8 @@
     <list default="true" id="f297f703-a04b-4c39-8267-720e0cb82030" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/formulario_crear_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/formulario_crear_post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/formulario_editar_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/formulario_editar_post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/_cards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/_cards.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +184,7 @@
       <workItem from="1589297894532" duration="5840000" />
       <workItem from="1589305079631" duration="2382000" />
       <workItem from="1589387818387" duration="7407000" />
-      <workItem from="1589710104525" duration="7140000" />
+      <workItem from="1589710104525" duration="9730000" />
     </task>
     <servers />
   </component>
@@ -240,6 +240,18 @@
       <screen x="0" y="27" width="1366" height="686" />
     </state>
     <state x="164" y="77" width="1027" height="584" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1/0.27.1366.686@0.27.1366.686" timestamp="1589390624950" />
+    <state x="493" y="69" width="858" height="644" key="dock-window-1" timestamp="1589727842962">
+      <screen x="0" y="27" width="1366" height="686" />
+    </state>
+    <state x="493" y="69" width="858" height="644" key="dock-window-1/0.27.1366.686@0.27.1366.686" timestamp="1589727842962" />
+    <state x="-558" y="147" width="858" height="644" maximized="true" key="dock-window-2" timestamp="1589727842963">
+      <screen x="0" y="27" width="1366" height="686" />
+    </state>
+    <state x="-558" y="147" width="858" height="644" maximized="true" key="dock-window-2/0.27.1366.686@0.27.1366.686" timestamp="1589727842963" />
+    <state x="912" y="125" width="868" height="644" maximized="true" key="dock-window-3" timestamp="1589727842963">
+      <screen x="0" y="27" width="1366" height="686" />
+    </state>
+    <state x="912" y="125" width="868" height="644" maximized="true" key="dock-window-3/0.27.1366.686@0.27.1366.686" timestamp="1589727842963" />
     <state x="346" y="34" width="672" height="678" key="search.everywhere.popup" timestamp="1589480058735">
       <screen x="0" y="27" width="1366" height="686" />
     </state>

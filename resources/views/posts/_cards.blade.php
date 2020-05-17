@@ -22,6 +22,6 @@
         @endforeach
         <div class="loading"></div>
     @else
-        <p class="mt-5 ml-5">¡Ups! Parece que no hay posts.</p>
+        <p class="mt-5 ml-5" id="upsi" >¡Ups! Parece que no hay posts.</p>
     @endif
 
