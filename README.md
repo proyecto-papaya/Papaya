@@ -35,27 +35,6 @@ Para configurar la base de datos copiar el `.env.example` con `cp .env.example .
 
 También es importante recordar la variable `APP_DEBUG` que en desarrollo tendrá que estar seteada a `true` pero en producción siempre en `false`. Si no lo hiciéramos así, nos arriesgamos a exponer información sensible y esto hace nuestra aplicación menos segura.
 
-## Sobreescribiendo el auth de Laravel
-
-Todavía no hemos podido sobreescribir los métodos del paquete Auth de Laravel, así que los cambios se tendrán que introducir manualmente ya que se hacen en `Vendor` y, como es habitual, está añadida en el `.gitignore`.
-
-Para que funcione bien el sistema de login tenemos que cambiar la L153 de `vendor/ui/auth-backend/AuthenticateUsers`
-y poner `return name;`.
-
-Hay que ir al archivo:
-`
-vendor/laravel/framework/src/Illuminate/Auth/Events/Registered.php` 
-y editar la funcion` __construct` de esta forma:
-
-```php
-public function __construct($user)
-{
-$this->user = $user;
-$this->user->profile_picture="images/user.png";
-$this->user->save();
-}
-```
-
 ## Ver la página desde el navegador
 
 Para lanzarlo al navegador con artisan:
