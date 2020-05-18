@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://kit.fontawesome.com/e3989053af.js" ></script>
+    <script src="https://kit.fontawesome.com/e3989053af.js"></script>
     <!-- JQuery -->
     <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -28,11 +28,12 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm mb-4">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <a class="navbar-brand" href="/">
             <img src="/logo.svg" alt="logo" style="width:3em;" class="ml-1">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -61,12 +62,13 @@
                 @else
                     <li class="nav-item m-auto pl-3">
                         <a class="nav-link" href="{{ route('showForm') }}">
-                        <i class="fas fa-plus text-marron">
-                        </i>
+                            <i class="fas fa-plus text-marron">
+                            </i>
                         </a>
                     </li>
                     <li class="nav-item m-auto pl-3">
-                        <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false" v-pre>
                             <i class="fas fa-user text-marron"></i>
                         </a>
 
@@ -82,48 +84,28 @@
                             </form>
                         </div>
                     </li>
-
                     <li class="nav-item m-auto pl-3 pr-3">
                         <i class="fas fa-heart text-marron"></i>
                     </li>
-
                 @endguest
             </ul>
         </div>
     </nav>
     <main class="">
-        <div id="loading-container" style="
-            background-color: #2fa360;
-            height: 100%;
-            width: 100%;
-            position: fixed;
-            z-index: 10000;
-          ">
+        <div id="loading-container" class="loading-container">
             <div id="loading">
-                <img src="{{asset('images/papaya_loading.gif')}}" alt="" style="
-                    height: 8em;
-                    width: 8em;
-                    border-radius: 20%;
-
-                    position:absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    margin: auto;
-                ">
+                <img src="{{asset('images/papaya_loading.gif')}}" class="papaya-gif" alt="Loading papaya">
             </div>
         </div>
         @yield('content')
     </main>
 
     <script>
-        window.onload = function(){
+        window.onload = function () {
             var contenedor = document.getElementById('loading-container');
-
             contenedor.style.visibility = "hidden";
             contenedor.style.opacity = 0;
-            contenedor.style.transition =".4s ease-in 4s";
+            contenedor.style.transition = ".4s ease-in 4s";
         }
     </script>
 </div>
