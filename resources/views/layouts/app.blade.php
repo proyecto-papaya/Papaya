@@ -105,7 +105,7 @@
             var contenedor = document.getElementById('loading-container');
             contenedor.style.visibility = "hidden";
             contenedor.style.opacity = 0;
-            contenedor.style.transition = " 0.5s ease-in 0.5s";
+            //contenedor.style.transition = " 0.5s ease-in 0.5s";
         }
     </script>
 </div>

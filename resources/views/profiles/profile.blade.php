@@ -20,11 +20,12 @@
 
             <div class="col-3">{{$user->name}}</div>
 
+            @if($user->name == Auth::user()->name)
             <div class="col-3">123 seguidores</div>
             <div class="col-3">123 siguiendo</div
 
             <div class="col-3">
-            @if($user->name == Auth::user()->name)
+
                     <div class="dropdown">
                         <div id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-cog" onclick="show()"></i>
@@ -36,7 +37,9 @@
                         </div>
                     </div>
             @else
+                <div class="col-6">
                     <button type="button" class="btn btn-outline-dark">Seguir</button>
+                </div>
             @endif
             </div>
         </div>
@@ -51,6 +54,19 @@
                 </div>
             </div>
         </div>
+
+        @if(count($user->posts))
+            @foreach($user->posts as $post)
+                <div class="col-3">
+                    <div>
+                        {!! $post->archivos->first()->icon !!}
+                    </div>
+                    <div>{{$post->title}}</div>
+                </div>
+            @endforeach
+        @else
+            <p class="mt-5 ml-5" id="upsi" >¡Ups! Parece que no hay posts.</p>
+        @endif
     </div>
     <script type="application/javascript">
         function show() {
