@@ -25,7 +25,16 @@
 
             <div class="col-3">
             @if($user->name == Auth::user()->name)
-                    <button type="button" style="border: 0; background: transparent;"><i class="fas fa-cog"></i></button>
+                    <div class="dropdown">
+                        <div id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-cog" onclick="show()"></i>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button"><a class="text-marron" href="#">Editar Perfil</a></button>
+                            <button class="dropdown-item" type="button"><a class="text-marron" href="#">Cambiar Contraseña</a></button>
+                            <button class="dropdown-item" type="button"><a class="text-marron" href="#">Eliminar Cuenta</a></button>
+                        </div>
+                    </div>
             @else
                     <button type="button" class="btn btn-outline-dark">Seguir</button>
             @endif
@@ -42,6 +51,11 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <script type="application/javascript">
+        function show() {
+            var element = document.getElementById("dropdown");
+            element.classList.toggle('d-none');
+        }
+    </script>
 @endsection
