@@ -8,11 +8,20 @@
         <div class="col-lg-3 d-none d-lg-block border text-center h-75 descubre">
             @include("posts._discover")
         </div>
+        <div id="carga-posts" class="mt-5 mb-3 col-7">
+            <div class="row justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script type="application/javascript">
     var pagina = 2
+    var carga = document.getElementById('carga-posts')
+
     window.onscroll = ()=>{
         if((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2){
             fetch(`/pages?page=${pagina}`, {
@@ -21,11 +30,13 @@
             .then(response => response.text())
             .then(html => {
                 if(document.getElementById('upsi')==null){
-                document.getElementById('posts').innerHTML += html}
+                    document.getElementById('posts').innerHTML += html
+                }else{
+                    carga.classList.add('d-none')
+                }
                 pagina ++;
             })
             .catch(error=> console.log(error))
-
         }
     }
 
