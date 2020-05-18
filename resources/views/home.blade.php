@@ -27,26 +27,27 @@
 
     window.onscroll = () => {
         if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 1) {
-            if(!peticion){
+            if (!peticion) {
                 peticion = true
 
                 fetch(`/pages?page=${pagina}`, {
                     method: 'get'
                 })
-                .then(response => response.text())
-                .then(html => {
+                    .then(response => response.text())
+                    .then(html => {
                         if (document.getElementById('upsi') == null) {
                             document.getElementById('posts').innerHTML += html
-                        }else{
+                        } else {
                             carga.classList.add('d-none')
                         }
                         pagina++
                         peticion = false
-                })
-                .catch(error => console.log(error))
+                    })
+                    .catch(error => console.log(error))
 
             }
         }
+    }
 </script>
 @endsection
 
