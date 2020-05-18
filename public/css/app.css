@@ -65,11 +65,9 @@ html {
 .descubre{
     background-color: white;
     border-radius: 0.25rem;
-    margin-top: 1em;
+    margin-top: 2rem;
 
 }
-
-
 
 .has-search .form-control {
     padding-left: 2.375rem;
@@ -109,6 +107,26 @@ body {
     color: #212529;
     text-align: left;
     background-color: #FFF9F3;
+}
+
+.loading-container{
+    background-color: #fcfefb;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+}
+
+.papaya-gif{
+    height: 8em;
+    width: 8em;
+    border-radius: 20%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
