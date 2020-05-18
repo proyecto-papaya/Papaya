@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="card-title row">
                         <div class="h3 p-2 col-10"><a class="text-papaya" href="/p/{{$post->id}}">{{$post->title}}</a></div>
-                        <a href="#" class="col-1 d-flex justify-content-center align-items-center"><img src="{{$post->user->profile_picture}}" alt="" class="rounded-circle" style="height: 2em"></a>
+                        <a href="/user/{{$post->user->id}}" class="col-1 d-flex justify-content-center align-items-center"><img src="{{$post->user->profile_picture}}" alt="" class="rounded-circle" style="height: 2em"></a>
                     </div>
 
                     <div class="card-text mb-3">{{$post->text}}</div>

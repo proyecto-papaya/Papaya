@@ -24,7 +24,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/custom_app.css')}}">
 </head>
 <body>
 <div id="app">
@@ -73,6 +72,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a href="/user/{{Auth::user()->id}}">Usuario</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -105,7 +105,7 @@
             var contenedor = document.getElementById('loading-container');
             contenedor.style.visibility = "hidden";
             contenedor.style.opacity = 0;
-            contenedor.style.transition = ".4s ease-in 4s";
+            contenedor.style.transition = " 0.5s ease-in 0.5s";
         }
     </script>
 </div>
