@@ -38,7 +38,7 @@ class Post extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function listas(){
+    public function lists(){
         return $this->belongsToMany('App\Lista');
     }
 
