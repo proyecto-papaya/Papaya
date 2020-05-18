@@ -8,6 +8,13 @@
         <div class="col-lg-3 d-none d-lg-block border text-center h-75 descubre">
             @include("posts._discover")
         </div>
+        <div id="carga-posts" class="mt-5 mb-3 col-7">
+            <div class="row justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -16,6 +23,7 @@
 
     var pagina = 2
     var peticion = false
+    var carga = document.getElementById('carga-posts')
 
     window.onscroll = () => {
         if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 1) {
@@ -29,6 +37,8 @@
                 .then(html => {
                         if (document.getElementById('upsi') == null) {
                             document.getElementById('posts').innerHTML += html
+                        }else{
+                            carga.classList.add('d-none')
                         }
                         pagina++
                         peticion = false
@@ -37,9 +47,6 @@
 
             }
         }
-
-    }
-
 </script>
 @endsection
 

@@ -6,7 +6,7 @@
             <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-2" style="width: 2em">
         @endif
     </div>
-    <div class="col-9">
+    <div class="col-lg-9 col-9">
         <div class="text-dark">
             {{$comment->text}}
         </div>
