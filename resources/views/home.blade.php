@@ -18,28 +18,35 @@
     </div>
 </div>
 
+
 <script type="application/javascript">
+
     var pagina = 2
+    var peticion = false
     var carga = document.getElementById('carga-posts')
 
-    window.onscroll = ()=>{
-        if((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2){
-            fetch(`/pages?page=${pagina}`, {
-                method: 'get'
-            })
-            .then(response => response.text())
-            .then(html => {
-                if(document.getElementById('upsi')==null){
-                    document.getElementById('posts').innerHTML += html
-                }else{
-                    carga.classList.add('d-none')
-                }
-                pagina ++;
-            })
-            .catch(error=> console.log(error))
-        }
-    }
+    window.onscroll = () => {
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 1) {
+            if(!peticion){
+                peticion = true
 
+                fetch(`/pages?page=${pagina}`, {
+                    method: 'get'
+                })
+                .then(response => response.text())
+                .then(html => {
+                        if (document.getElementById('upsi') == null) {
+                            document.getElementById('posts').innerHTML += html
+                        }else{
+                            carga.classList.add('d-none')
+                        }
+                        pagina++
+                        peticion = false
+                })
+                .catch(error => console.log(error))
+
+            }
+        }
 </script>
 @endsection
 
