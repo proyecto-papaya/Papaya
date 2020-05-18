@@ -42,7 +42,6 @@
                 </div>
             @endif
             </div>
-        </div>
         <div class="row">
             <div class="col-12">{{$user->description}}</div>
         </div>
@@ -55,18 +54,20 @@
             </div>
         </div>
 
-        @if(count($user->posts))
-            @foreach($user->posts as $post)
-                <div class="col-3">
-                    <div>
-                        {!! $post->archivos->first()->icon !!}
+        <div class="row">
+            @if(count($user->posts))
+                @foreach($user->posts as $post)
+                    <div class="col-3">
+                        <div>
+                            {!! $post->archivos->first()->icon !!}
+                        </div>
+                        <div>{{$post->title}}</div>
                     </div>
-                    <div>{{$post->title}}</div>
-                </div>
-            @endforeach
-        @else
-            <p class="mt-5 ml-5" id="upsi" >¡Ups! Parece que no hay posts.</p>
-        @endif
+                @endforeach
+            @else
+                <p class="mt-5 ml-5" id="upsi" >¡Ups! Parece que no hay posts.</p>
+            @endif
+        </div>
     </div>
     <script type="application/javascript">
         function show() {
