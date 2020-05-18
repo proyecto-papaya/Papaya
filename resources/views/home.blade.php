@@ -23,7 +23,6 @@
 
     var pagina = 2
     var peticion = false
-    var carga = document.getElementById('carga-posts')
 
     window.onscroll = () => {
         if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 1) {
@@ -37,8 +36,8 @@
                     .then(html => {
                         if (document.getElementById('upsi') == null) {
                             document.getElementById('posts').innerHTML += html
-                        } else {
-                            carga.classList.add('d-none')
+                        }else{
+                            document.getElementById('carga-posts').classList.add('d-none')
                         }
                         pagina++
                         peticion = false
