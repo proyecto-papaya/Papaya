@@ -229,6 +229,10 @@ a {
     background-color: transparent;
 }
 
+.margen-adecuado{
+    margin-top: 2rem; !important;
+}
+
 a:hover {
     color: #1d68a7;
     text-decoration: underline;
