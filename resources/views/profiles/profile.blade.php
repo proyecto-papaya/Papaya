@@ -69,7 +69,7 @@
                 <p class="mt-5 ml-5" id="upsi" >¡Ups! Parece que no hay posts.</p>
             @endif
         </div>
-    </div>
+</div>
     <script type="application/javascript">
         function show() {
             var element = document.getElementById("dropdown");
