@@ -16,8 +16,8 @@ class Lista extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function listas(){
-        return $this->belongsToMany('App\Lista');
+    public function posts(){
+        return $this->belongsToMany('App\Post');
     }
 
     /**Relación N:1 con User

@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->boolean('private');
             $table->bigInteger('number_downloads')->default(0);
             $table->text('text');
+            $table->boolean('favorite');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
