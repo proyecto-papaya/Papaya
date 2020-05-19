@@ -22,7 +22,8 @@
 
             @if($user->name == Auth::user()->name)
             <div class="col-3">123 seguidores</div>
-            <div class="col-3">123 siguiendo</div
+            <div class="col-3">123 seguidores</div>
+            <div class="col-3">123 siguiendo</div>
 
             <div class="col-3">
 
