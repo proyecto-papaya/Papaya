@@ -8,8 +8,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3 text-center m-auto">
-                        <button class="btn btn-lg btn-papaya btn-block text-uppercase">Volver a home</button>
+                        <a class="active" href="/">
+                            <button class="button text-uppercase"><span>Volver a home</span></button></a>
                     </div>
                 </div>
             </div>
 @endsection
+
