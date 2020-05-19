@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Lista;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -66,11 +67,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'profile_picture' => "images/user.png",
             'password' => Hash::make($data['password']),
         ]);
+
+         $this->createFavorite($user);
+
+         return $user;
+    }
+
+    protected function createFavorite($user)
+    {
+        $lista = new Lista();
+        $lista->title = "Favoritos";
+        $lista->user_id = $user->id;
+
+        $lista->save();
     }
 }
