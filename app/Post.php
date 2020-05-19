@@ -9,7 +9,8 @@ class Post extends Model
     protected $fillable = [
         "title",
         "private",
-        "text"
+        "text",
+        "favorite"
     ];
 
     /** Relación N:1 con Archivo
@@ -73,5 +74,17 @@ class Post extends Model
 
         $date = $date_array[2]."/".$date_array[1]."/".$date_array[0];
         return $date;
+    }
+
+    public function favorito(){
+
+        $favorite = $this->favorite;
+        if($favorite == true){
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 }
