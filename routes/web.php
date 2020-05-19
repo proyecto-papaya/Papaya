@@ -54,3 +54,6 @@ Route::get('/user/{user}','ProfileController@show');
 
 //Editar perfil de usuario
 Route::put('user/update/{user}','ProfileController@update');
+
+//Editar contraseña
+Route::put('user/update/password/{user}','ProfileController@update');
