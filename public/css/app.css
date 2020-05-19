@@ -53,8 +53,6 @@
 }
 
 
-
-
 html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -107,6 +105,10 @@ body {
     color: #212529;
     text-align: left;
     background-color: #FFF9F3;
+}
+
+.font-size-user{
+    font-size: 18px;
 }
 
 .loading-container{
@@ -277,6 +279,11 @@ a:hover {
     text-decoration: underline;
 }
 
+fa-cog-hover:hover {
+    color: #00AAAA;
+    background-color: #b0d4f1;
+}
+
 a:not([href]) {
     color: inherit;
     text-decoration: none;
@@ -285,6 +292,10 @@ a:not([href]) {
 a:not([href]):hover {
     color: inherit;
     text-decoration: none;
+}
+
+.fa-cog:hover {
+    color: #f67f21;
 }
 
 pre,
@@ -3397,6 +3408,61 @@ fieldset:disabled a.btn {
 .btn-outline-dark {
     color: #343a40;
     border-color: #343a40;
+}
+
+.btn-outline-papaya{
+    color: #7E5934;
+    border-color: #7E5934;
+}
+
+@-webkit-keyframes hvr-ripple-out {
+    100% {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        opacity: 0;
+    }
+}
+@keyframes hvr-ripple-out {
+    100% {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        opacity: 0;
+    }
+}
+.hvr-ripple-out {
+    border-radius: 0.25rem;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+}
+.hvr-ripple-out:before {
+    color: #7E5934;
+    content: '';
+    position: absolute;
+    border-radius: 0.25rem;
+    border: #7E5934 solid 1px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
+    -webkit-animation-name: hvr-ripple-out;
+    animation-name: hvr-ripple-out;
+}
+
+.btn-outline-papaya:hover{
+    border: #f67f21;
+    color: #f67f21;
 }
 
 .btn-outline-dark:hover {
