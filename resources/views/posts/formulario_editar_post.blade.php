@@ -7,7 +7,7 @@
             @method('PUT')
             <div class="form-group">
                 <label for="title">Titulo</label>
-                <input type="text" class="form-control" id="title" name="title" value={{$post->title}} >
+                <input type="text" class="form-control" id="title" name="title" value="{{$post->title}}" >
             </div>
             <div class="form-group">
                 <label for="description">Descripcion</label>
@@ -25,9 +25,9 @@
                     <label for="file" >
                         <i class="fas fa-file-upload fa-3x" style="color: #f67f21"></i>
                     </label>
-                    <input onchange="cambiar();" class="d-none" required id="file" type=file name="file">
+                    <input onchange="cambiar();" class="d-none" id="file" type=file name="file">
                     <br><small>Seleccionar archivo</small>
-                    <div id="info"></div>
+                    <div id="info">{{$file->name}}</div>
                 </div>
             </div>
 
