@@ -69,8 +69,12 @@ class ProfileController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->email = $request->email;
-        $user->description = $request->description;
+        if (isset($request->email)){
+            $user->email = $request->email;
+        }
+        if(isset($request->description)){
+            $user->description = $request->description;
+        }
         $user->save();
 
         return view('profiles.profile', compact('user'));
