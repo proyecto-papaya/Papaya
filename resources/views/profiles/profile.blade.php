@@ -76,20 +76,22 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <form>
+                                <form action="/user/update/{{$user->id}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
                                     <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Nombre:</label>
-                                        <input type="text" class="form-control" id="recipient-name" placeholder="{{$user->name}}">
+                                        <label for="recipient-name" class="col-form-label">Email:</label>
+                                        <input type="text" class="form-control" id="recipient-name" class="email" placeholder="{{$user->name}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Descripción</label>
-                                        <textarea class="form-control" id="message-text" placeholder="{{$user->description}}"></textarea>
+                                        <textarea class="form-control" id="message-text" name="description" placeholder="{{$user->description}}"></textarea>
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Actualizar</button>
+                                <button type="submit" class="btn btn-primary">Actualizar</button>
                             </div>
                         </div>
                     </div>

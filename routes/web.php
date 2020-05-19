@@ -48,3 +48,6 @@ Route::get('/download/{id}','ArchivoController@download');
 
 //Mostrar perfil de usuario
 Route::get('/user/{user}','ProfileController@show');
+
+//Editar perfil de usuario
+Route::put('user/update/$user','ProfileController@update');
