@@ -10,6 +10,9 @@ class ArchivoController extends Controller
 {
     public function download($id){
         $archivo = Archivo::findOrFail($id);
+        $post = $archivo->post;
+        $post->number_downoads ++;
+        $post->save();
 
         return Storage::download($archivo->path, $archivo->name);
     }
