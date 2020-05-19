@@ -31,7 +31,11 @@ class PostController extends Controller
             $file->type = $file->archivo_type();
             $file->icon = $file->icon();
 
-            $file->path=$request->file("file")->store("public");
+            $path="public/user-".$post->user_id;
+            if(!Storage::exists($path)) {
+                Storage::makeDirectory($path);
+            }
+            $file->path=$request->file("file")->store($path);
             $file->user_id=auth()->id();
             $file->post_id=$post->id;
 
