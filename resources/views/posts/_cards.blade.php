@@ -34,22 +34,3 @@
 @else
     <p class="mt-5 ml-5" id="upsi">¡Ups! Parece que no hay posts.</p>
 @endif
-
-
-<script type="application/javascript">
-    function like() {
-        alert('hola4')
-        /*   $.ajax({
-               method: 'POST',
-               url: '/lists',
-               data: {id: 6},
-               success: function (response) {
-                   console.log(response);
-               },
-               error: function (e) {
-                   console.log(e);
-               }
-           });*/
-    }
-</script>
-
