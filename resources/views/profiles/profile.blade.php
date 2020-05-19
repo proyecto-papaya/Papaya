@@ -32,7 +32,7 @@
                             <i class="fas fa-cog" onclick="show()"></i>
                         </div>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button"><a class="text-marron" href="#">Editar Perfil</a></button>
+                            <button class="dropdown-item" type="button"><a class="text-marron" data-toggle="modal" data-target="#exampleModal" href="#">Editar Perfil</a></button>
                             <button class="dropdown-item" type="button"><a class="text-marron" href="#">Cambiar Contraseña</a></button>
                             <button class="dropdown-item" type="button"><a class="text-marron" href="#">Eliminar Cuenta</a></button>
                         </div>
@@ -69,6 +69,31 @@
                 <p class="mt-5 ml-5" id="upsi" >¡Ups! Parece que no hay posts.</p>
             @endif
         </div>
+
+            <!--PRUEBA MODALES -->
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nombre:</label>
+                                        <input type="text" class="form-control" id="recipient-name" placeholder="{{$user->name}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">Descripción</label>
+                                        <textarea class="form-control" id="message-text" placeholder="{{$user->description}}"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Actualizar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </div>
     <script type="application/javascript">
         function show() {
