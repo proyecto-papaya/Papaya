@@ -2,7 +2,7 @@
 @section('content')
     <div class="d-flex align-items-center m-auto">
         <div class="col-12 mt-5 pt-5">
-            <h2 class="text-center text-papaya pb-1">403 | No tienes acceso a esta página</h2>
+            <h2 class="text-center text-papaya pb-1">419 | La sesión ha caducado</h2>
             <h3 class="text-center pb-3">Ups. Algo ha salido mal</h3>
             <div class="container">
                 <div class="row">

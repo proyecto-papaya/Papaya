@@ -46,6 +46,9 @@ Route::post('/comment/{id}',"ComentarioController@store");
 //Descargar archivo
 Route::get('/download/{id}','ArchivoController@download');
 
+//Listas
+Route::get('/lists/{idPost}','ListasController@createFavorite');
+
 //Mostrar perfil de usuario
 Route::get('/user/{user}','ProfileController@show');
 
