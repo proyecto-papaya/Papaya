@@ -81,17 +81,16 @@
                                     @method('PUT')
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Email:</label>
-                                        <input type="text" class="form-control" id="recipient-name" class="email" placeholder="{{$user->name}}">
+                                        <input type="text" class="form-control" id="recipient-name" name="email" placeholder="{{$user->email}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Descripción</label>
                                         <textarea class="form-control" id="message-text" name="description" placeholder="{{$user->description}}"></textarea>
                                     </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                                    </div>
                                 </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary">Actualizar</button>
                             </div>
                         </div>
                     </div>

@@ -73,7 +73,7 @@ class ProfileController extends Controller
         $user->description = $request->description;
         $user->save();
 
-        return view('profiles.profile');
+        return view('profiles.profile', compact('user'));
     }
 
     /**
