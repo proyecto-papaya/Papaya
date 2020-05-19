@@ -67,9 +67,17 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        if (isset($request->email)){
+            $user->email = $request->email;
+        }
+        if(isset($request->description)){
+            $user->description = $request->description;
+        }
+        $user->save();
+
+        return view('profiles.profile', compact('user'));
     }
 
     /**
