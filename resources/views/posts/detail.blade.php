@@ -24,7 +24,7 @@
             </div>
 
             <div class="row">
-                <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-3" style="width: 2em">
+                <a href="/user/{{$post->user->id}}"><img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-3" style="width: 2em"></a>
                 <div class="text-dark ml-3">{{$post->user->name}}</div>
             </div>
 

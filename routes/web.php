@@ -28,6 +28,7 @@ Route::get('formPostEditar{id_post}','PostController@showFormEditar');
 Route::put('updatePost{id}','PostController@updatePost');
 /////////////////////777777777777777777777777777777/////////////////////////
 
+//Borrar un post
 Route::get('deletePost{id}', 'PostController@deletePost');
 
 //Mostrar home (Falta middleware)
@@ -44,3 +45,6 @@ Route::post('/comment/{id}',"ComentarioController@store");
 
 //Descargar archivo
 Route::get('/download/{id}','ArchivoController@download');
+
+//Mostrar perfil de usuario
+Route::get('/user/{user}','ProfileController@show');
