@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -88,6 +90,21 @@ class ProfileController extends Controller
      */
     public function updatePassword(Request $request, User $user){
 
+        $validatedData = $request->validate([
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        if (Hash::check($request->actual_password, $user->password)){
+
+            $newPassword = Hash::make($request->new_password);
+
+            $user->password = $newPassword;
+            $user->save();
+
+            redirect('/user/'.$user);
+        } else {
+            return 'La contraseña no coincide con la de la bd.';
+        }
     }
 
     /**

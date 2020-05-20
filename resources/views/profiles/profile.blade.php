@@ -104,13 +104,13 @@
                             @method('PUT')
 
                             <div class="form-group">
-                                <label for="password" class="col-form-label">Contraseña actual</label>
-                                <input id="password" type="password" class="form-control" name="actual-password" required>
+                                <label for="actual_password" class="col-form-label">Contraseña actual</label>
+                                <input id="actual_password" type="password" class="form-control" name="actual_password" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="new-password" class="col-form-label">Nueva Contraseña</label>
-                                <input id="new-password" type="password" class="form-control @error('password') is-invalid @enderror" name="new-password" required>
+                                <label for="password" class="col-form-label">Nueva Contraseña</label>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new_password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -120,8 +120,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="new-password-confirm" class="col-form-label">Nueva Contraseña</label>
-                                <input id="new-password-confirm" type="password" class="form-control" name="new-password-confirmation" required>
+                                <label for="password_confirmation" class="col-form-label">Nueva Contraseña</label>
+                                <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required autocomplete="new_password">
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Actualizar</button>
@@ -135,7 +135,7 @@
 
     </div>
 </div>
-    
+
 <script type="application/javascript">
     function show() {
         var element = document.getElementById("dropdown");
