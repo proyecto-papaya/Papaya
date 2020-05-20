@@ -87,4 +87,10 @@ class Post extends Model
         }
 
     }
+
+    public function scopePost($query, $texto) {
+        if ($texto) {
+            return $query->where('title','like',"%$texto%");
+        }
+    }
 }

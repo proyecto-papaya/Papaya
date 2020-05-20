@@ -33,16 +33,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function showHome(){
-        //paginate() sólo se puede usar sobre una query, no una Collection
-        $posts = Post::orderBy('created_at','DESC')->paginate(3);
+    public function showHome(Request $request){
+        $buscador = $request->get('buscador');
+        $posts = Post::post($buscador)->orderBy('created_at','DESC')->paginate(3);
+        //$posts = Post::orderBy('created_at','DESC')->paginate(3);}
 
         $random_posts = DB::table('posts')
             ->inRandomOrder()
             ->take(10)
             ->get();
 
-        return view("home", compact("posts","random_posts"));
+        return view("home", compact("posts","random_posts"),compact('buscador'));
     }
 
     /**
@@ -50,10 +51,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function paginacion(){
+    public function paginacion(Request $request){
+        $buscador = $request->get('buscador');
         //paginate() sólo se puede usar sobre una query, no una Collection
-        $posts = Post::orderBy('created_at','DESC')->paginate(3);
+        $posts = Post::post($buscador)->orderBy('created_at','DESC')->paginate(3);
 
-        return view("posts._cards", compact("posts"));
+        return view("posts._cards", compact("posts"),compact('buscador'));
     }
 }
