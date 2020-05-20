@@ -1,6 +1,24 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+
+        <div class="row">
+            @if(session('status') != null)
+                <div class="col-12 alert-info rounded-right p-3">
+                    <div >{{session('status')}}</div>
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
         <div class="col-lg-11 col-12 m-auto">
         <div class="card mt-5">
             <div class="card-body">
@@ -33,21 +51,18 @@
                     </div>
                     <div class="col-lg-2 col-5 text-marron">123 seguidores</div>
 
-                    <div class="col-lg-2 col-1">
-                        <div class="dropdown">
-                            <div id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-cog" onclick="show()"></i>
-                            </div>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button"><a class="text-marron" data-toggle="modal"
-                                                                               data-target="#exampleModal" href="#">Editar
-                                        Perfil</a></button>
-                                <button class="dropdown-item" type="button"><a class="text-marron" href="#">Cambiar
-                                        Contraseña</a></button>
-                                <button class="dropdown-item" type="button"><a class="text-marron" href="#">Eliminar
-                                        Cuenta</a></button>
-                            </div>
+
+                <div class="col-lg-2 col-1">
+                    <div class="dropdown">
+                        <div id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-cog" onclick="show()"></i>
                         </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button"><a class="text-marron" data-toggle="modal" data-target="#editarPerfilModal" href="#">Editar Perfil</a></button>
+                            <button class="dropdown-item" type="button"><a class="text-marron"  data-toggle="modal" data-target="#cambiarContraseñaModal" href="#">Cambiar Contraseña</a></button>
+                            <button class="dropdown-item" type="button"><a class="text-marron" href="#">Eliminar Cuenta</a></button>
+                        </div>
+                  </div>
                         @else
                             <div class="col-lg-3 col-3 m-auto">
                                 <button type="button" class="btn hvr-ripple-out text-marron">Seguir</button>
@@ -112,13 +127,55 @@
                     </div>
             </div>
         </div>
+
+
+        <div class="modal fade" id="cambiarContraseñaModal" tabindex="-1" role="dialog" aria-labelledby="cambiarContraseñaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                        <form action="/user/update/password/{{$user->id}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+
+                            <div class="form-group">
+                                <label for="actual_password" class="col-form-label">Contraseña actual</label>
+                                <input id="actual_password" type="password" class="form-control" name="actual_password" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="col-form-label">Nueva Contraseña</label>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new_password">
+
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password_confirmation" class="col-form-label">Nueva Contraseña</label>
+                                <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required autocomplete="new_password">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Actualizar</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
-    </div>
-    <script type="application/javascript">
-        function show() {
-            var element = document.getElementById("dropdown");
-            element.classList.toggle('d-none');
-        }
-    </script>
+</div>
+
+<script type="application/javascript">
+    function show() {
+        var element = document.getElementById("dropdown");
+        element.classList.toggle('d-none');
+    }
+</script>
+
 @endsection
