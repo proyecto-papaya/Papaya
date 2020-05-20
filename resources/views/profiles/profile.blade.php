@@ -98,33 +98,44 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
+
                         <form action="/user/update/password/{{$user->id}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
+
                             <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Contraseña actual</label>
-                                <input type="text" class="form-control" id="recipient-name" name="actual-password" placeholder="{{$user->email}}">
+                                <label for="password" class="col-form-label">Contraseña actual</label>
+                                <input id="password" type="password" class="form-control" name="actual-password" required>
                             </div>
+
                             <div class="form-group">
-                                <label for="message-text" class="col-form-label">Nueva Contraseña</label>
-                                <textarea class="form-control" id="message-text" name="new-password" placeholder="{{$user->description}}"></textarea>
+                                <label for="new-password" class="col-form-label">Nueva Contraseña</label>
+                                <input id="new-password" type="password" class="form-control @error('password') is-invalid @enderror" name="new-password" required>
+
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
+
                             <div class="form-group">
-                                <label for="message-text" class="col-form-label">Nueva Contraseña</label>
-                                <textarea class="form-control" id="message-text" name="confirm-new-password" placeholder="{{$user->description}}"></textarea>
+                                <label for="new-password-confirm" class="col-form-label">Nueva Contraseña</label>
+                                <input id="new-password-confirm" type="password" class="form-control" name="new-password-confirmation" required>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Actualizar</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
 
-
     </div>
 </div>
+    
 <script type="application/javascript">
     function show() {
         var element = document.getElementById("dropdown");

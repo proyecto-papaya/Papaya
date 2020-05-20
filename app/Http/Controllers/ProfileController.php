@@ -81,6 +81,16 @@ class ProfileController extends Controller
     }
 
     /**
+     *Actualiza la contraseña del usuario pasado por parámetro
+     *
+     * @param Request $request
+     * @param User $user
+     */
+    public function updatePassword(Request $request, User $user){
+
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
