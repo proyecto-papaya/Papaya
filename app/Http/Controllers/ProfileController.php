@@ -101,10 +101,11 @@ class ProfileController extends Controller
             $user->password = $newPassword;
             $user->save();
 
-            redirect('/user/'.$user);
+            $request->session()->flash('status', 'Guardado correctamente');
         } else {
-            return 'La contraseña no coincide con la de la bd.';
+            $request->session()->flash('status', 'La contraseña no coincide');
         }
+        return redirect('/user/'.$user->id);
     }
 
     /**

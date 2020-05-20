@@ -1,6 +1,23 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        <div class="row">
+            @if(session('status') != null)
+                <div class="col-12 alert-info rounded-right p-3">
+                    <div >{{session('status')}}</div>
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
         <div class="row border-bottom p-4">
             <div class="col-1">
                 @if($user->name == Auth::user()->name)
