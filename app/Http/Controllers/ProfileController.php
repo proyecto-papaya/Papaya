@@ -109,13 +109,15 @@ class ProfileController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Destruye la cuenta del usuario loggeado
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        $user = Auth::user();
+        User::destroy($user->id);
+        return redirect('/login');
     }
 }

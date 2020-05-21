@@ -57,3 +57,6 @@ Route::put('user/update/{user}','ProfileController@update');
 
 //Editar contraseña
 Route::put('user/update/password/{user}','ProfileController@updatePassword');
+
+//Borrar cuenta usuario
+Route::delete('user/delete','ProfileController@destroy');
