@@ -57,3 +57,6 @@ Route::put('user/update/{user}','ProfileController@update');
 
 //Editar contraseña
 Route::put('user/update/password/{user}','ProfileController@updatePassword');
+
+//Editar foto de perfil
+Route::put('user/picture/update', 'ProfileController@updateAvatar');

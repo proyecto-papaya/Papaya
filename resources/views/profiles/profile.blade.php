@@ -26,15 +26,13 @@
             <div class="row border-bottom p-0 pb-3 pt-2 pl-2">
                 <div class="col-1 mr-1">
                     @if($user->name == Auth::user()->name)
-                        <button href="/edit_profile_picture"
-                                onclick=" document.getElementById('profile-picture-input').click();"
-                                style="border: 0; background: transparent;">
-                            <img src="{{asset($user->profile_picture)}}" class="rounded-circle img-responsive" alt=""
+                            <img src="{{asset($user->profile_picture)}}" class="rounded-circle img-responsive" onclick="updateAvatar()" alt=""
                                  style="width: 3em;">
-                        </button>
-                        <form class="d-none" id="profile-picture-form" action="/edit_profile_picture" method="POST">
+                        <form class="d-none" id="profile-picture-form" action="" method="POST">
                             @csrf
+                            @method('PUT')
                             <input id="profile-picture-input" type=file name="profile_picture">
+                            <button id="submit-avatar" type="submit" class="d-none"></button>
                         </form>
                     @else
                         <div>
@@ -175,6 +173,12 @@
     function show() {
         var element = document.getElementById("dropdown");
         element.classList.toggle('d-none');
+    }
+
+    function updateAvatar(){
+        document.getElementById('profile-picture-input').click();
+        document.getElementById('submit-avatar').submit();
+
     }
 </script>
 
