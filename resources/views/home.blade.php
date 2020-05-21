@@ -29,7 +29,7 @@
             if (!peticion) {
                 peticion = true
 
-                fetch(`/pages?page=${pagina}`, {
+                fetch(`/pages?page=${pagina}&buscador={{$buscador}}`, {
                     method: 'get'
                 })
                     .then(response => response.text())
