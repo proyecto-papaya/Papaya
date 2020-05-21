@@ -28,7 +28,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" >
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-md-8 ml-5">
+                            <div class="col-md-6 offset-4">
                                 <small class="ml-5">En Papaya no es obligatorio aportar un email.</small>
                             </div>
                         </div>
