@@ -26,20 +26,24 @@
             <div class="row border-bottom p-0 pb-3 pt-2 pl-2">
                 <div class="col-1 mr-1">
                     @if($user->name == Auth::user()->name)
-                        <button href="/edit_profile_picture"
-                                onclick=" document.getElementById('profile-picture-input').click();"
-                                style="border: 0; background: transparent;">
-                            <img src="{{asset($user->profile_picture)}}" class="rounded-circle img-responsive" alt=""
+                        @if($user->profile_picture == 'images/user.png')
+                            <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-3 img-responsive" onclick="updateAvatar()"style="width: 3em">
+                        @else
+                            <img src="{{Storage::url($user->profile_picture)}}" class="rounded-circle img-responsive" onclick="updateAvatar()" alt=""
                                  style="width: 3em;">
-                        </button>
-                        <form class="d-none" id="profile-picture-form" action="/edit_profile_picture" method="POST">
+                        @endif
+                        <form class="d-none" id="profile-picture-form" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input id="profile-picture-input" type=file name="profile_picture">
                         </form>
                     @else
-                        <div>
-                            <img src="{{asset($user->profile_picture)}}" class="rounded-circle img-responsive" alt=""
-                                 style="width: 3em;">
+                        <div class="col-1 mr-1">
+                            @if($user->profile_picture == 'images/user.png')
+                                <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-3 img-responsive" style="width: 3em">
+                            @else
+                                <img src="{{Storage::url($user->profile_picture)}}" class="rounded-circle img-responsive"  alt=""
+                                     style="width: 3em;">
+                            @endif
                         </div>
                     @endif
                 </div>
@@ -199,6 +203,38 @@
     function show() {
         var element = document.getElementById("dropdown");
         element.classList.toggle('d-none');
+    }
+
+    function updateAvatar() {
+        const csrfToken = "{{ csrf_token() }}"
+        const input = document.getElementById('profile-picture-input')
+
+        input.click();
+        input.onchange = function(){
+
+            let photo = document.getElementById("profile-picture-input").files[0];
+            let formData = new FormData();
+
+            formData.append("profile_picture", photo)
+
+            fetch('/user/picture/update/' + {{Auth::user()->id}}, {
+                method: "POST",
+                headers: {
+                    "X-CSRF-Token": csrfToken,
+                },
+                body: formData
+            }).then(response => {
+                if (!response.ok) {
+                    throw response;
+                }
+                return response
+            }).then((data) => {
+                console.log(data)
+            }).catch(error => {
+                console.error("error", error)
+            })
+
+        }
     }
 </script>
 
