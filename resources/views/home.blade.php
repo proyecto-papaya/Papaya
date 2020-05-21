@@ -20,10 +20,12 @@
 
 
 <script type="application/javascript">
-    if(document.getElementsByClassName('card').length==1){
+    if(document.getElementsByClassName('card').length<2){
         document.getElementById('carga-posts').classList.add('d-none')
         var html ="<p class=\"mt-5 ml-5\" id=\"upsi\">¡Ups! Parece que no hay posts.</p>"
-        document.getElementById('posts').innerHTML += html
+        if (document.getElementById('upsi') == null) {
+            document.getElementById('posts').innerHTML += html
+        }
     }
 
     var pagina = 2
