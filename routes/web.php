@@ -59,4 +59,4 @@ Route::put('user/update/{user}','ProfileController@update');
 Route::put('user/update/password/{user}','ProfileController@updatePassword');
 
 //Editar foto de perfil
-Route::put('user/picture/update', 'ProfileController@updateAvatar');
+Route::post('user/picture/update/{user}', 'ProfileController@updateAvatar');

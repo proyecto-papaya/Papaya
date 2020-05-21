@@ -26,18 +26,24 @@
             <div class="row border-bottom p-0 pb-3 pt-2 pl-2">
                 <div class="col-1 mr-1">
                     @if($user->name == Auth::user()->name)
-                            <img src="{{asset($user->profile_picture)}}" class="rounded-circle img-responsive" onclick="updateAvatar()" alt=""
+                        @if($user->profile_picture == 'images/user.png')
+                            <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-3 img-responsive" onclick="updateAvatar()"style="width: 3em">
+                        @else
+                            <img src="{{Storage::url($user->profile_picture)}}" class="rounded-circle img-responsive" onclick="updateAvatar()" alt=""
                                  style="width: 3em;">
-                        <form class="d-none" id="profile-picture-form" action="" method="POST">
+                        @endif
+                        <form class="d-none" id="profile-picture-form" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
                             <input id="profile-picture-input" type=file name="profile_picture">
-                            <button id="submit-avatar" type="submit" class="d-none"></button>
                         </form>
                     @else
-                        <div>
-                            <img src="{{asset($user->profile_picture)}}" class="rounded-circle img-responsive" alt=""
-                                 style="width: 3em;">
+                        <div class="col-1 mr-1">
+                            @if($user->profile_picture == 'images/user.png')
+                                <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-3 img-responsive" style="width: 3em">
+                            @else
+                                <img src="{{Storage::url($user->profile_picture)}}" class="rounded-circle img-responsive"  alt=""
+                                     style="width: 3em;">
+                            @endif
                         </div>
                     @endif
                 </div>
@@ -175,10 +181,36 @@
         element.classList.toggle('d-none');
     }
 
-    function updateAvatar(){
-        document.getElementById('profile-picture-input').click();
-        document.getElementById('submit-avatar').submit();
+    function updateAvatar() {
+        const csrfToken = "{{ csrf_token() }}"
+        const input = document.getElementById('profile-picture-input')
 
+        input.click();
+        input.onchange = function(){
+
+            let photo = document.getElementById("profile-picture-input").files[0];
+            let formData = new FormData();
+
+            formData.append("profile_picture", photo)
+
+            fetch('/user/picture/update/' + {{Auth::user()->id}}, {
+                method: "POST",
+                headers: {
+                    "X-CSRF-Token": csrfToken,
+                },
+                body: formData
+            }).then(response => {
+                if (!response.ok) {
+                    throw response;
+                }
+                return response
+            }).then((data) => {
+                console.log(data)
+            }).catch(error => {
+                console.error("error", error)
+            })
+
+        }
     }
 </script>
 
