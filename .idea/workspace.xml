@@ -21,58 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f297f703-a04b-4c39-8267-720e0cb82030" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X0425c333a5773f7a59ca7b20ad1822c9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X04988c92b60979e3a1b3aa1a9b04f2e9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X1318fd2b2ab05b9275cf91fcbc1be294.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X15b0207872a152163c41bcf9948b56b7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X1707f19c779c6010d35a86a2589643c6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X1954b0604b901d816054e9cef2ac1ca9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X1f7e54089f3d29866039a83398cfe4d6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X2087ea0d88228f19f29c0dc44767f6f5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X25582f02c43c78a44e3a1cecb638f43b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X2b1451dc407eb496f64e3f9a3083ef17.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X3133d7058510f6a3e09ec896eee2fbb7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X39dddc435cf36fad9b94a18afe4cde33.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X39ed5a026e0f8be28a8117dbf0825066.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X432052fee6e40524a1a4fad567cf5ba3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X437792c099b4790912e493ca8144b97b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X4496e5570ec30b0c50e312f73eb5e6be.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X4df1eb3dd7e260ca089623f34966b770.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X4dfc4230f2acbb732383a79cb1c65d82.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X53f645280bd17472f8d9cf5a8090f981.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X54a644674e83bafc4cc17fc3ae9a30cb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X59aba9f6400a6a6dc0874ae128d48eb0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X5be453f830546e809f13d049d92cb3e1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X5f79ff1844c40ec1701962e089fd2d95.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X5ff9d178b49cab51109cddf0d3699dc9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X7dbca1b162828a3f6d885f6ed2a98e56.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X80ea9a19c613c98aef26e756f38f1642.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X845f197b41a055ee7d78c719da69a168.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X882362de916eb63360eae133949aec1b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X8a9b0c4052d6a8f35c2a2741fe971386.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X8b3dce4bad77e4bcc8f92107c4c13b96.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X9c3cc5e12c166e0dfd613cc9e836f817.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/X9d4d952f4aeb866c7dc9be4c09029679.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xa2034f8f137cc054f5558c4a59f053da.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xa30e32b65e2767514949f0d655f3556d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xad65062f2f7b4bd29059812842ed3d5c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xb4a49cc771f74f4013fd56feb523385a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xbadaddece817b517dd96f20e7d1c4b00.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xbece210ac086f4d906e8d9ea528a405f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xcc106069d7e98a08f91495e82f34eba8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xce3b1eebae4a966ceb489347c5611bdd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xd4b94ef19a32eb2f19074d75d6f22047.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xd96abb59bc2881a9d9761ecebc7373ca.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xdc291841993e017300e94bb0dc5e8185.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xe1ade6532b3db10205aca8959d08e6d6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xedfc3dc5b1f1cced419c08da69d51b8a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xf0f6c7aa68f8c25261d6f6c04263281b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xf6bb14d94600e8f75080546164a2fbd5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/debugbar/Xfbba176ba995503472f6f90656fd740e.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
