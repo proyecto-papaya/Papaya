@@ -3460,6 +3460,15 @@ fieldset:disabled a.btn {
     animation-name: hvr-ripple-out;
 }
 
+.heart-papaya:hover{
+    color: #f67f21;
+}
+
+.heart-papaya{
+    color: black;
+}
+
+
 .btn-outline-papaya:hover{
     border: #f67f21;
     color: #f67f21;
@@ -3646,6 +3655,14 @@ input[type=button].btn-block {
 .dropdown-menu-right {
     right: 0;
     left: auto;
+
+}
+
+.dropdown-menu-right-fav{
+    right: 0;
+    left: auto;
+    width: 24%;
+
 }
 
 @media (min-width: 576px) {

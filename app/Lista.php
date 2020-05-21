@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Lista extends Model
 {
     protected $fillable = [
@@ -17,7 +18,7 @@ class Lista extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function posts(){
-        return $this->belongsToMany('App\Post');
+        return $this->belongsToMany('App\Post')->with('post_id');
     }
 
     /**Relación N:1 con User

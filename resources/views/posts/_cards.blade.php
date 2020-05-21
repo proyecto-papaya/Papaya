@@ -14,9 +14,17 @@
                         <div class="h6 col-6">{{$post->date()}}</div>
                     </div>
 
-                    <a href="/lists/{{$post->id}}">
-                     <i class="far fa-heart col-1">
-                     </i></a>
+                  <a href="/lists/{{$post->id}}" class="heart-papaya text-dark">
+                {{--    <a href="/favoritesList" class="heart-papaya text-dark">
+                        @foreach($favoritePosts as $post)
+                        @endforeach--}}
+                    @if($post->favorite)
+                            <i class="fas fa-heart col-1"></i>
+                        @else
+                            <i class="far fa-heart col-1">
+                            </i>
+                        @endif
+                     </a>
                 </div>
             </div>
         </div>

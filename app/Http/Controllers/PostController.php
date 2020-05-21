@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Archivo;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -52,10 +53,20 @@ class PostController extends Controller
      */
     public function showDetail($id)
     {
+        $user_id = Auth::user()->id;
+
         $post = Post::findOrFail($id);
         $comments = $post->comentarios;
 
-        return view("posts.detail", compact("post","comments"));
+        $favs = DB::select('select distinct post.*, arch.icon
+                        from listas list
+                        inner join lista_post listp on list.id = listp.lista_id
+                        inner join posts post on listp.post_id = post.id
+                        inner join archivos arch on arch.post_id = post.id
+                        where list.user_id = ?',[$user_id]);
+
+
+        return view("posts.detail", compact("post","comments", "favs"));
     }
 
     public function showFormEditar($id) {

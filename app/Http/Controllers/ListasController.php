@@ -19,10 +19,25 @@ class ListasController extends Controller
     {
         $user_id = Auth::user()->id;
         $lista = Lista::where('user_id','=', $user_id)->firstOrFail();
-        $lista->posts()->attach($postId);
+        $post=Post::query()
+            ->where('id', $postId)
+            ->first();
+
+        if ($post->favorite){
+            $lista->posts()->detach($postId);
+            $post->update(['favorite' => false]);
+        } else{
+            $lista->posts()->attach($postId);
+            $post->update(['favorite' => true]);
+        }
 
         return redirect()->route('home');
     }
 
+
+    public function listaFavoritos(){
+        $user_id = Auth::user()->id;
+        $postsFavoritos = Lista::where('user_id', '=', $user_id and '');
+    }
 
 }

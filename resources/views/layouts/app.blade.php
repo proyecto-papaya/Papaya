@@ -84,8 +84,23 @@
                             </form>
                         </div>
                     </li>
-                    <li class="nav-item m-auto pl-3 pr-3">
-                        <i class="fas fa-heart text-marron"></i>
+                    <li class="nav-item m-auto pl-3">
+                        <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fas fa-heart text-marron"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right-fav font-weight-bold" aria-labelledby="navbarDropdown">
+                            <a class="text-uppercase text-papaya">Favoritos</a>
+                                @foreach($favs as $post)
+                                    <div class="row">
+                                        <a class="text-marron" href="/p/{{$post->id}}">
+                                        <div class="col-1">{!! $post->icon !!}</div>
+                                    <div class="h6 col-6">{{$post->title}}</div>
+                                        </a>
+                                    </div>
+                                @endforeach
+                        </div>
                     </li>
                 @endguest
             </ul>

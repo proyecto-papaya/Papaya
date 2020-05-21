@@ -78,4 +78,12 @@ class User extends Authenticatable
         return $this->hasMany('App\Lista');
     }
 
+    public function favoritosUsuario(){
+        $favsUser = new Lista();
+        $favsUser = $this->listas()->where('title','=', 'Favoritos');
+        return $favsUser;
+
+        return view('layouts.app', compact("favsUser"));
+    }
+
 }
