@@ -64,7 +64,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button"><a class="text-marron" data-toggle="modal" data-target="#editarPerfilModal" href="#">Editar Perfil</a></button>
                             <button class="dropdown-item" type="button"><a class="text-marron"  data-toggle="modal" data-target="#cambiarContraseñaModal" href="#">Cambiar Contraseña</a></button>
-                            <button class="dropdown-item" type="button"><a class="text-marron" href="#">Eliminar Cuenta</a></button>
+                            <button class="dropdown-item" type="button"><a class="text-marron" data-toggle="modal" data-target="#eliminarPerfilModal" href="#">Eliminar Cuenta</a></button>
                         </div>
                   </div>
                         @else
@@ -164,6 +164,30 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Actualizar</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="eliminarPerfilModal" tabindex="-1" role="dialog" aria-labelledby="eliminarPerfilModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                        <form action="/user/delete" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('DELETE')
+
+                            <div class="col-12">
+                                <p>¿Estás segurx de que quieres borrar la cuenta?</p>
+                                <p>Los cambios serán irreversibles.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Eliminar mi cuenta</button>
                             </div>
                         </form>
 
