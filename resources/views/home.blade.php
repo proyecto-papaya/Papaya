@@ -20,7 +20,7 @@
 
 
 <script type="application/javascript">
-    if(document.getElementsByClassName('card').length<2){
+    if(document.getElementsByClassName('card').length<3){
         document.getElementById('carga-posts').classList.add('d-none')
         var html ="<p class=\"mt-5 ml-5\" id=\"upsi\">¡Ups! Parece que no hay posts.</p>"
         if (document.getElementById('upsi') == null) {
