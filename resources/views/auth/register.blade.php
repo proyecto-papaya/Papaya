@@ -36,7 +36,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-md-6 offset-4">
+                            <div class="col-12 d-flex justify-content-center">
                                 <small class="ml-5">En Papaya no es obligatorio aportar un email.</small>
                             </div>
                         </div>
