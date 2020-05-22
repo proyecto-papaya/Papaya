@@ -5,7 +5,7 @@
         <form name="formulario_post" id="formulario_post" action='updatePost{{$post->id}}' method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="title">Titulo</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{$post->title}}" >
             </div>
