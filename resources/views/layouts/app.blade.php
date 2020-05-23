@@ -43,11 +43,20 @@
             <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
                 <li class="nav-item m-auto">
                     <div class="form-group has-search m-auto">
-                        <form>
+                        <form id="formBuscar" action='/home' method="get" >
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" name="buscador" placeholder="Buscador">
+{{--                        <input type="text" class="form-control" name="buscador" placeholder="Buscador">--}}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="buscador" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-papaya" type="submit"><b>Buscar</b></button>
+                                </div>
+                            </div>
                         </form>
                     </div>
+
+
+
                 </li>
 
                 <!-- Authentication Links -->
@@ -127,18 +136,12 @@
 
         }
     </script>
-    <script type="application/javascript">
-        $(function() {
-            $('form').each(function() {
-                $(this).find('input').keypress(function(e) {
-                    if(e.which == 10 || e.which == 13) {
-                        this.form.submit();
-                    }
-                });
-                //
-                // $(this).find('input[type=submit]').hide();
-            });
-        });
+    <script>
+        document.getElementById("formBuscar").addEventListener("keypress", submit(e));
+        function submit(e) {
+            if(e.which == 10 || e.which == 13) {
+                this.form.submit();
+        }}
     </script>
 </div>
 </body>

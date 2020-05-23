@@ -32,6 +32,10 @@
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
 
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/formulario_crear_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/formulario_crear_post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/formulario_editar_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/formulario_editar_post.blade.php" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
 
     </list>

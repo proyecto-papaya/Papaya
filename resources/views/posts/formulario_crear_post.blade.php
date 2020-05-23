@@ -4,7 +4,7 @@
 <div class="container" style="max-width: 600px; margin: auto;">
     <form name="formulario_post" id="formulario_post" action='createPost' method="post" enctype="multipart/form-data">
         @csrf
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="title">Titulo</label>
                 <input type="text" class="form-control" id="title" name="title" value='' >
             </div>
