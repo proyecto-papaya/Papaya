@@ -86,17 +86,18 @@
                     </li>
                     <li class="nav-item m-auto pl-3">
                         <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false" v-pre>
+                           aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-heart text-marron"></i>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right-fav font-weight-bold" aria-labelledby="navbarDropdown">
-                            <a class="text-uppercase text-papaya">Favoritos</a>
-                                @foreach($favs as $post)
-                                    <div class="row">
-                                        <a class="text-marron" href="/p/{{$post->id}}">
-                                        <div class="col-1">{!! $post->icon !!}</div>
-                                    <div class="h6 col-6">{{$post->title}}</div>
+                        <div class="dropdown-menu dropdown-menu-right-fav pt-2 pb-2" aria-labelledby="navbarDropdown">
+                            <a class="text-uppercase text-papaya font-weight-bold pb-5 fav-size" id="dropMenu">Favoritos</a>
+
+                            @foreach(Auth::user()->listaFavoritos() as $post)
+                                    <div class="row mt-fav">
+                                        <div class="ml-2 col-1">{!! $post->icon !!}</div>
+                                        <a href="/p/{{$post->id}}" class="col-9 text-marron">
+                                            <div class="pb-2">{{$post->title}}</div>
                                         </a>
                                     </div>
                                 @endforeach
@@ -121,6 +122,7 @@
             contenedor.style.visibility = "hidden";
             contenedor.style.opacity = 0;
             //contenedor.style.transition = " 0.5s ease-in 0.5s";
+
         }
     </script>
 </div>

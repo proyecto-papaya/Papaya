@@ -13,15 +13,11 @@
                         {!! $post->archivos->first()->icon !!}
                         <div class="h6 col-6">{{$post->date()}}</div>
                     </div>
-
-                  <a href="/lists/{{$post->id}}" class="heart-papaya text-dark">
-                {{--    <a href="/favoritesList" class="heart-papaya text-dark">
-                        @foreach($favoritePosts as $post)
-                        @endforeach--}}
-                    @if($post->favorite)
-                            <i class="fas fa-heart col-1"></i>
+                  <a class="heart-papaya text-dark cursor" onclick="favClick({{$post->id}})">
+                    @if(Auth::user()->isFavorite($post->id))
+                            <i id="heart{{$post->id}}" class="fas fa-heart col-1"></i>
                         @else
-                            <i class="far fa-heart col-1">
+                            <i id="heart{{$post->id}}" class="far fa-heart col-1">
                             </i>
                         @endif
                      </a>
@@ -32,3 +28,27 @@
 @else
     <p class="mt-5 ml-5" id="upsi">¡Ups! Parece que no hay posts.</p>
 @endif
+
+<script>
+
+    function favClick(id){
+        $.ajax({
+                url: '/lists/'+id,
+                type: 'get',
+                success:function (data) {
+                    if(data.activeHeart){
+                        const activeHeart = $('#heart'+id).addClass('fas')
+                        activeHeart.removeClass('far')
+                    }
+                    else{
+                        const activeHeart = $('#heart'+id).addClass('far')
+                        activeHeart.removeClass('fas')
+                    }
+                },
+                error: function (data) {
+                    console.log('Ha salido mal.')
+                }
+            })
+    }
+
+</script>

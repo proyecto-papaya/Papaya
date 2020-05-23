@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -78,12 +78,29 @@ class User extends Authenticatable
         return $this->hasMany('App\Lista');
     }
 
-    public function favoritosUsuario(){
-        $favsUser = new Lista();
-        $favsUser = $this->listas()->where('title','=', 'Favoritos');
-        return $favsUser;
+    public function listaFavoritos(){
+        $user_id = Auth::user()->id;
 
-        return view('layouts.app', compact("favsUser"));
+        $favs = DB::select('select distinct post.*, arch.icon
+                        from listas list
+                        inner join lista_post listp on list.id = listp.lista_id
+                        inner join posts post on listp.post_id = post.id
+                        inner join archivos arch on arch.post_id = post.id
+                        where list.user_id = ?',[$user_id]);
+
+        return $favs;
+
+    }
+
+    public function isFavorite($postId){
+        $listaFavs = $this->listaFavoritos();
+
+        foreach ($listaFavs as $postFav){
+            if ($postFav->id == $postId){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

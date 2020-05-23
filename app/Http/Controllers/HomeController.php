@@ -45,19 +45,7 @@ class HomeController extends Controller
             ->take(10)
             ->get();
 
-        $user_id = Auth::user()->id;
-
-        $lista = Lista::where('user_id','=', $user_id)
-            ->with('post_id');
-
-        $favs = DB::select('select distinct post.*, arch.icon
-                        from listas list
-                        inner join lista_post listp on list.id = listp.lista_id
-                        inner join posts post on listp.post_id = post.id
-                        inner join archivos arch on arch.post_id = post.id
-                        where list.user_id = ?',[$user_id]);
-
-        return view("home", compact("posts","random_posts", "favs"));
+        return view("home", compact("posts","random_posts"));
 
     }
 

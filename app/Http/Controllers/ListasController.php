@@ -18,26 +18,40 @@ class ListasController extends Controller
     public function createFavorite($postId)
     {
         $user_id = Auth::user()->id;
+        $activeHeart = false;
         $lista = Lista::where('user_id','=', $user_id)->firstOrFail();
         $post=Post::query()
             ->where('id', $postId)
             ->first();
 
-        if ($post->favorite){
+        if (Auth::user()->isFavorite($post->id)){
             $lista->posts()->detach($postId);
-            $post->update(['favorite' => false]);
+            $activeHeart = false;
+
         } else{
             $lista->posts()->attach($postId);
-            $post->update(['favorite' => true]);
+            $activeHeart = true;
         }
 
-        return redirect()->route('home');
+        return response()->json(['status' => 'success', 'activeHeart' => $activeHeart]);
+
     }
 
 
     public function listaFavoritos(){
         $user_id = Auth::user()->id;
-        $postsFavoritos = Lista::where('user_id', '=', $user_id and '');
+
+        $favs = DB::select('select distinct post.*, arch.icon
+                        from listas list
+                        inner join lista_post listp on list.id = listp.lista_id
+                        inner join posts post on listp.post_id = post.id
+                        inner join archivos arch on arch.post_id = post.id
+                        where list.user_id = ?',[$user_id]);
+
+      //  return view("layouts.app", compact("favs"));
+        return compact("favs");
+
+        return view('', compact("favs"));
     }
 
 }

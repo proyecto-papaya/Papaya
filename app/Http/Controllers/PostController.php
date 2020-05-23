@@ -58,15 +58,7 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $comments = $post->comentarios;
 
-        $favs = DB::select('select distinct post.*, arch.icon
-                        from listas list
-                        inner join lista_post listp on list.id = listp.lista_id
-                        inner join posts post on listp.post_id = post.id
-                        inner join archivos arch on arch.post_id = post.id
-                        where list.user_id = ?',[$user_id]);
-
-
-        return view("posts.detail", compact("post","comments", "favs"));
+        return view("posts.detail", compact("post","comments"));
     }
 
     public function showFormEditar($id) {
@@ -119,4 +111,5 @@ class PostController extends Controller
 
         return redirect()->route('home');
     }
+
 }

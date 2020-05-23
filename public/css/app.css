@@ -111,6 +111,10 @@ body {
     font-size: 18px;
 }
 
+.cursor{
+    cursor: pointer;
+}
+
 .loading-container{
     background-color: #fcfefb;
     height: 100%;
@@ -527,6 +531,10 @@ h5,
 h6,
 .h6 {
     font-size: 0.9rem;
+}
+
+.fav-size{
+    font-size: 16px;
 }
 
 .lead {
@@ -3658,10 +3666,16 @@ input[type=button].btn-block {
 
 }
 
+#dropMenu{
+    text-align: center;
+    margin-left: 1.6rem;
+    margin-bottom: 2rem;
+}
+
 .dropdown-menu-right-fav{
     right: 0;
     left: auto;
-    width: 24%;
+    width: 28%;
 
 }
 
@@ -3672,6 +3686,12 @@ input[type=button].btn-block {
     }
 
     .dropdown-menu-sm-right {
+        right: 0;
+        left: auto;
+    }
+
+    .dropdown-menu-right-fav{
+        width: 28%;
         right: 0;
         left: auto;
     }
@@ -3686,6 +3706,11 @@ input[type=button].btn-block {
     .dropdown-menu-md-right {
         right: 0;
         left: auto;
+    }
+
+    .dropdown-menu-right-fav{
+        width: 28%;
+        padding-left: 2rem;
     }
 }
 
@@ -8603,6 +8628,10 @@ button.bg-dark:focus {
 .mt-0,
 .my-0 {
     margin-top: 0 !important;
+}
+
+.mt-fav{
+    margin-top: 0.55rem;
 }
 
 .mr-0,
