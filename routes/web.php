@@ -48,6 +48,7 @@ Route::get('/download/{id}','ArchivoController@download');
 
 //Listas
 Route::get('/lists/{idPost}','ListasController@createFavorite');
+Route::get('/favoritesList','ListasController@listaFavoritos');
 
 //Mostrar perfil de usuario
 Route::get('/user/{user}','ProfileController@show');

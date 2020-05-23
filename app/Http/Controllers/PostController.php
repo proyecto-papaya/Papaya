@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Archivo;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -52,6 +53,8 @@ class PostController extends Controller
      */
     public function showDetail($id)
     {
+        $user_id = Auth::user()->id;
+
         $post = Post::findOrFail($id);
         $comments = $post->comentarios;
 
@@ -108,4 +111,5 @@ class PostController extends Controller
 
         return redirect()->route('home');
     }
+
 }
