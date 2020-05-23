@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Post extends Model
 {
@@ -75,6 +76,7 @@ class Post extends Model
         $date = $date_array[2]."/".$date_array[1]."/".$date_array[0];
         return $date;
     }
+
 
     public function favorito(){
 

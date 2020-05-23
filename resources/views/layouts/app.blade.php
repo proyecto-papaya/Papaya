@@ -95,8 +95,24 @@
                             </form>
                         </div>
                     </li>
-                    <li class="nav-item m-auto pl-3 pr-3">
-                        <i class="fas fa-heart text-marron"></i>
+                    <li class="nav-item m-auto pl-3">
+                        <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-heart text-marron"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right-fav pt-2 pb-2" aria-labelledby="navbarDropdown">
+                            <a class="text-uppercase text-papaya font-weight-bold pb-5 fav-size" id="dropMenu">Favoritos</a>
+
+                            @foreach(Auth::user()->listaFavoritos() as $post)
+                                    <div class="row mt-fav">
+                                        <div class="ml-2 col-1">{!! $post->icon !!}</div>
+                                        <a href="/p/{{$post->id}}" class="col-9 text-marron">
+                                            <div class="pb-2">{{$post->title}}</div>
+                                        </a>
+                                    </div>
+                                @endforeach
+                        </div>
                     </li>
                 @endguest
             </ul>
@@ -117,6 +133,7 @@
             contenedor.style.visibility = "hidden";
             contenedor.style.opacity = 0;
             //contenedor.style.transition = " 0.5s ease-in 0.5s";
+
         }
     </script>
     <script>

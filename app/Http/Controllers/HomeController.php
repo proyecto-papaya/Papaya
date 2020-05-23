@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Lista;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use function MongoDB\BSON\fromJSON;
 
 class HomeController extends Controller
 {
@@ -43,7 +46,9 @@ class HomeController extends Controller
             ->take(10)
             ->get();
 
+
         return view("home", compact("posts","random_posts"),compact('buscador'));
+
     }
 
     /**
@@ -58,4 +63,5 @@ class HomeController extends Controller
 
         return view("posts._cards", compact("posts"),compact('buscador'));
     }
+
 }
