@@ -43,8 +43,10 @@
             <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
                 <li class="nav-item m-auto">
                     <div class="form-group has-search m-auto">
+                        <form>
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Buscador">
+                        <input type="text" class="form-control" name="buscador" placeholder="Buscador">
+                        </form>
                     </div>
                 </li>
 
@@ -124,6 +126,19 @@
             //contenedor.style.transition = " 0.5s ease-in 0.5s";
 
         }
+    </script>
+    <script type="application/javascript">
+        $(function() {
+            $('form').each(function() {
+                $(this).find('input').keypress(function(e) {
+                    if(e.which == 10 || e.which == 13) {
+                        this.form.submit();
+                    }
+                });
+                //
+                // $(this).find('input[type=submit]').hide();
+            });
+        });
     </script>
 </div>
 </body>

@@ -77,4 +77,22 @@ class Post extends Model
         return $date;
     }
 
+
+    public function favorito(){
+
+        $favorite = $this->favorite;
+        if($favorite == true){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    public function scopePost($query, $texto) {
+        if ($texto) {
+            return $query->where('title','like',"%$texto%");
+        }
+    }
 }
