@@ -103,4 +103,10 @@ class User extends Authenticatable
         return false;
     }
 
+    public function scopeUser($query, $texto) {
+        if ($texto) {
+            return $query->where('name','like',"%$texto%");
+        }
+    }
+
 }

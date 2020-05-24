@@ -81,22 +81,44 @@
                     <div class="row">
                         <div class="col-3 offset-7 mt-3 d-none d-sm-block d-xs-block">
                             <div class="form-group has-search m-auto">
-                                <span class="fa fa-search form-control-feedback"></span>
-                                <input type="text" class="form-control" placeholder="Buscador">
+                                <form id="formBuscarInProfile"  method="get" >
+                                    <span class="fa fa-search form-control-feedback"></span>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="buscador" name="buscador" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-papaya" type="submit"><b>Buscar</b></button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
+
                         </div>
                     </div>
 
                     <div class="row pt-5 pb-5">
                         @if(count($user->posts))
-                            @foreach($user->posts as $post)
-                                <div class="col-lg-3 col-6 col-md-3">
-                                    <div class="fa-3x text-center">
-                                        {!! $post->archivos->first()->icon !!}
+
+                            @if(isset(Request()->buscador))
+                                @foreach($user->posts as $post)
+                                    @if(strpos($post->title, Request()->buscador) !== false)
+                                    <div class="col-lg-3 col-6 col-md-3">
+                                        <div class="fa-3x text-center">
+                                            {!! $post->archivos->first()->icon !!}
+                                        </div>
+                                        <div class="text-center">{{$post->title}}</div>
                                     </div>
-                                    <div class="text-center">{{$post->title}}</div>
-                                </div>
-                            @endforeach
+                                    @endif
+                                @endforeach
+                            @else
+                                @foreach($user->posts as $post)
+                                    <div class="col-lg-3 col-6 col-md-3">
+                                        <div class="fa-3x text-center">
+                                            {!! $post->archivos->first()->icon !!}
+                                        </div>
+                                        <div class="text-center">{{$post->title}}</div>
+                                    </div>
+                                @endforeach
+                            @endif
                         @else
                             <p class="mt-5 ml-5" id="upsi">¡Ups! Parece que no hay posts.</p>
                         @endif
@@ -237,5 +259,12 @@
         }
     }
 </script>
+        <script type="application/javascript">
+            document.getElementById("formBuscarInProfile").addEventListener("keypress", submit(e));
+            function submit(e) {
+                if(e.which == 10 || e.which == 13) {
+                    this.form.submit();
+                }}
+        </script>
 
 @endsection
