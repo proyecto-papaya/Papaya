@@ -27,7 +27,7 @@
                         <br><small>Seleccionar archivo</small>
                         <div id="info"></div>
                 </div>
-                <div class="toast h-50" data-delay="3000">
+                <div class="toast h-10 d-none position-absolute" id="toast" data-delay="3000">
                     <div class="toast-body d-flex h-100 align-content-center alert-danger">
                         <p class="">No has seleccionado ningun archivo</p>
                     </div>
@@ -43,6 +43,7 @@
     }
 
     function alertFile() {
+        document.getElementById('toast').classList.add('d-block')
         var x = document.forms["formulario_post"]["file"].value;
         if (x == "") {
             $('.toast').toast('show');

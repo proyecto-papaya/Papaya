@@ -49,7 +49,7 @@
                                         @endif
                                     </div>
 
-                                    <div class="col-12 col-md-8 text-papaya font-weight-bolder text-left"><label>{{$user->name}}</label></div>
+                                    <div class="col-11 col-md-8 text-papaya font-weight-bolder text-md-left text-right"><label>{{$user->name}}</label></div>
                                 </div>
                             </div>
                             @if($user->name == Auth::user()->name)
@@ -77,7 +77,7 @@
                                     <div class="text-marron text-center">Seguidos</div>
                                 </div>
                             </div>
-                            <div class="row m-0">
+                            <div class="row mr-0 ml-md-5 ml-2">
                                 <div class="col-10 pt-4 pb-4"><label>{{$user->description}}</label></div>
                             </div>
                         </div>
