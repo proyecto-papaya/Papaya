@@ -4,32 +4,37 @@
     <div class="col-md-8 m-auto pt-4">
         <div class="card pt-4 px-4 pb-5">
             <div class="row">
-                <div class="col-lg-10 col-8 h1 text-papaya">
-                    {{$post->title}}
+                <div class="col-lg-8">
+                    <label class="h1 text-small d-flex text-papaya">{{$post->title}}</label>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        {{$post->number_downloads}} descargas
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="">
+                            @if($post->user->profile_picture == 'images/user.png')
+                                <a href="/user/{{$post->user->id}}"><img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-3" style="width: 2em"></a>
+                            @else
+                                <a href="/user/{{$post->user->id}}"><img src="{{Storage::url($post->user->profile_picture)}}" alt="" class="rounded-circle ml-3" style="width: 2em"></a>
+                            @endif
+                        </div>
+                        <div class="">
+                            <div class="text-dark ml-3">{{$post->user->name}}</div>
+                        </div>
                     </div>
+                </div>
+                <div class="col-4 text-right">
+                    <label class="mr-md-3">{{$post->number_downloads}} descargas</label><br>
                     @if($post->user->name == Auth::user()->name)
-                        <div class="col-12">
+                        <lavel class="mr-md-3">
                             @if($post->private)
                                 Privado
                             @else
                                 Público
                             @endif
-                        </div>
+                        </lavel>
                     @endif
                 </div>
-            </div>
-
-            <div class="row">
-                @if($post->user->profile_picture == 'images/user.png')
-                    <a href="/user/{{$post->user->id}}"><img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle ml-3" style="width: 2em"></a>
-                @else
-                    <a href="/user/{{$post->user->id}}"><img src="{{Storage::url($post->user->profile_picture)}}" alt="" class="rounded-circle ml-3" style="width: 2em"></a>
-                @endif
-                <div class="text-dark ml-3">{{$post->user->name}}</div>
             </div>
 
             <div class="row mt-3 mb-3">
