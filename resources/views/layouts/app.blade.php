@@ -83,7 +83,14 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/user/{{Auth::user()->id}}">Usuario</a>
+                            <a class="dropdown-item" href="/user/{{Auth::user()->id}}">
+                                @if(Auth::user()->profile_picture == 'images/user.png')
+                                    <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle" class="mr-2" style="height: 1em">
+                                @else
+                                    <img src="{{Storage::url(Auth::user()->profile_picture)}}" alt="" class="rounded-circle" class="mr-2" style="height: 1em">
+                                @endif
+                                {{ Auth::user()->name }}
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
