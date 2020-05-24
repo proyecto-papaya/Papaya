@@ -82,7 +82,7 @@
                             <i class="fas fa-user text-marron"></i>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right position-absolute " aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/user/{{Auth::user()->id}}">
                                 @if(Auth::user()->profile_picture == 'images/user.png')
                                     <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle" class="mr-2" style="height: 1em">
@@ -108,7 +108,7 @@
                             <i class="fas fa-heart text-marron"></i>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right-fav pt-2 pb-2" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right-fav pt-2 pb-2 position-absolute" aria-labelledby="navbarDropdown">
                             <a class="text-uppercase text-papaya font-weight-bold pb-5 fav-size" id="dropMenu">Favoritos</a>
 
                             @foreach(Auth::user()->listaFavoritos() as $post)
