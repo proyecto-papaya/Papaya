@@ -45,7 +45,6 @@
                     <div class="form-group has-search m-auto">
                         <form id="formBuscar" action='/home' method="get" >
                         <span class="fa fa-search form-control-feedback"></span>
-{{--                        <input type="text" class="form-control" name="buscador" placeholder="Buscador">--}}
                             <div class="input-group">
                                 <input type="text" class="form-control" name="buscador" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">

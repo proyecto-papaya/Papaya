@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Lista;
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -38,14 +39,14 @@ class HomeController extends Controller
      */
     public function showHome(Request $request){
         $buscador = $request->get('buscador');
-        $posts = Post::post($buscador)->orderBy('created_at','DESC')->paginate(3);
+        $users = User::user($buscador)->get('id');
+        $posts = Post::post($buscador,$users)->orderBy('created_at','DESC')->paginate(3);
         //$posts = Post::orderBy('created_at','DESC')->paginate(3);}
 
         $random_posts = DB::table('posts')
             ->inRandomOrder()
             ->take(10)
             ->get();
-
 
         return view("home", compact("posts","random_posts"),compact('buscador'));
 
@@ -58,8 +59,9 @@ class HomeController extends Controller
      */
     public function paginacion(Request $request){
         $buscador = $request->get('buscador');
+        $users = User::user($buscador)->get('id');
         //paginate() sólo se puede usar sobre una query, no una Collection
-        $posts = Post::post($buscador)->orderBy('created_at','DESC')->paginate(3);
+        $posts = Post::post($buscador,$users)->orderBy('created_at','DESC')->paginate(3);
 
         return view("posts._cards", compact("posts"),compact('buscador'));
     }

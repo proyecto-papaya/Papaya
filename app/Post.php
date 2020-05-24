@@ -90,9 +90,10 @@ class Post extends Model
 
     }
 
-    public function scopePost($query, $texto) {
+    public function scopePost($query, $texto,$users) {
         if ($texto) {
-            return $query->where('title','like',"%$texto%");
+            return $query->where('title','like',"%$texto%")
+                ->orWhereIn('user_id', $users);
         }
     }
 }
