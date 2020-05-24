@@ -14,7 +14,7 @@
 
                 <div class="card-text mb-3">{{$post->text}}</div>
                 <div class="card-text row justify-content-between">
-                    <div class="ml-1 col-11 row">
+                    <div class="ml-1 col-10 row">
                         {!! $post->archivos->first()->icon !!}
                         <div class="h6 col-6">{{$post->date()}}</div>
                     </div>
@@ -26,6 +26,9 @@
                             </i>
                         @endif
                      </a>
+                    <div id="spinner-border{{$post->id}}" class="spinner-border spinner-border-sm mr-3" style="display: none">
+                        <span class="sr-only">Loading...</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,6 +40,8 @@
 <script>
 
     function favClick(id){
+        $('#spinner-border'+id).show()
+        $('#heart'+id).hide()
         $.ajax({
                 url: '/lists/'+id,
                 type: 'get',
@@ -49,11 +54,14 @@
                         const activeHeart = $('#heart'+id).addClass('far')
                         activeHeart.removeClass('fas')
                     }
+                    $('#spinner-border'+id).hide()
+                    $('#heart'+id).show()
                 },
                 error: function (data) {
                     console.log('Ha salido mal.')
                 }
             })
     }
+
 
 </script>
