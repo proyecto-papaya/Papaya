@@ -74,6 +74,11 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+         if($user->id == 1){
+             $user->role = 'admin';
+             $user->save();
+         }
+
          $this->createFavorite($user);
 
          return $user;
