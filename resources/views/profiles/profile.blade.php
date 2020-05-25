@@ -64,12 +64,12 @@
                                             <button class="dropdown-item" type="button"><a class="text-marron" data-toggle="modal" data-target="#eliminarPerfilModal" href="#">Eliminar Cuenta</a></button>
                                         </div>
                                     </div>
+                                </div>
                                     @else
-                                        <div class="m-auto">
+                                        <div class="col-md-1 col-3 order-md-10">
                                             <button type="button" class="btn hvr-ripple-out text-marron">Seguir</button>
                                         </div>
-                                    @endif
-                                </div>
+                            @endif
                                 <div class="col-md-2 col-3 text-right mr-md-0 pr-md-0">
                                     <div class="text-marron text-center">Seguidores</div>
                                 </div>
