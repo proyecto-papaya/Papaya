@@ -96,8 +96,8 @@ class ProfileController extends Controller
         ]);
 
         if (Hash::check($request->actual_password, $user->password)){
-
-            $newPassword = Hash::make($request->new_password);
+            
+            $newPassword = Hash::make($request->password);
 
             $user->password = $newPassword;
             $user->save();
