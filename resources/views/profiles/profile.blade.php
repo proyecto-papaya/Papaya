@@ -254,6 +254,7 @@
                 if (!response.ok) {
                     throw response;
                 }
+                location.reload()
                 return response
             }).then((data) => {
                 console.log(data)
