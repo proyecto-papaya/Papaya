@@ -20,17 +20,17 @@
         </div>
         <div class="col-lg-11 col-12 m-md-auto m-0 p-0">
             <div class="card mt-md-5">
-                <div class="card-header  border-bottom-0 p-0 m-0">
+                <div class="card-header border-bottom-0 p-0 m-0">
                     <div class="card-title mt-md-5 mt-3 p-0 m-0 col-md-10">
                         <div class="row pt-2 p-0 m-0">
-                            <div class="col-md-7 col-3">
+                            <div class="col-md-7 col-3 pr-0">
                                 <div class="row">
-                                    <div class="col-md-4 text-right">
+                                    <div class="col-md-4 text-md-right text-center" >
                                         @if($user->name == Auth::user()->name)
                                             @if($user->profile_picture == 'images/user.png')
-                                                <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle img-responsive" onclick="updateAvatar()"style="width: 3em">
+                                                <img  src="{{ asset('images/user.png') }}" alt="" class="rounded-circle img-responsive w-100" onclick="updateAvatar()"style="width: 3em">
                                             @else
-                                                <img src="{{Storage::url($user->profile_picture)}}" class="rounded-circle img-responsive" onclick="updateAvatar()" alt=""
+                                                <img  src="{{Storage::url($user->profile_picture)}}" class="rounded-circle img-responsive w-100" onclick="updateAvatar()" alt=""
                                                      style="width: 3em;">
                                             @endif
                                             <form class="d-none" id="profile-picture-form" method="POST" enctype="multipart/form-data">
@@ -40,20 +40,20 @@
                                         @else
                                             <div class="">
                                                 @if($user->profile_picture == 'images/user.png')
-                                                    <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle img-responsive" style="width: 3em">
+                                                    <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle img-responsive w-100" style="width: 3em">
                                                 @else
-                                                    <img src="{{Storage::url($user->profile_picture)}}" class="rounded-circle img-responsive"  alt=""
+                                                    <img src="{{Storage::url($user->profile_picture)}}" class="rounded-circle img-responsive w-100"  alt=""
                                                          style="width: 3em;">
                                                 @endif
                                             </div>
                                         @endif
                                     </div>
 
-                                    <div class="col-11 col-md-8 text-papaya font-weight-bolder text-md-left text-right"><label>{{$user->name}}</label></div>
+                                    <div class="col-11 col-md-8 text-papaya font-weight-bolder text-md-left text-center"><label>{{$user->name}}</label></div>
                                 </div>
                             </div>
                             @if($user->name == Auth::user()->name)
-                                <div class="col-md-1 col-3 order-md-10 text-md-right text-left">
+                                <div class="col-md-1 col-3 order-md-10 text-md-right text-left pl-0">
                                     <div class="dropdown">
                                         <div id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-cog" onclick="show()"></i>
