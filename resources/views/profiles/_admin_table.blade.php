@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<table class="table table-bordered table-responsive">
     <thead>
     <tr>
         <th scope="col">ID</th>
@@ -25,6 +25,4 @@
     </tr>
     @endforeach
     </tbody>
-
-    {{ $users->links() }}
 </table>
