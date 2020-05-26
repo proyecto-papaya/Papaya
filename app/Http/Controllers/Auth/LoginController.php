@@ -47,10 +47,11 @@ class LoginController extends Controller
         return 'name';
     }
 
-    public function authenticated(Request $request, $user) {
-        $user = new User();
-        $user->user()->last_login = Carbon::now()->toDateTimeString();
-        $user->save();
+    function authenticated(Request $request, $user)
+    {
+        $user->update([
+            'last_login' => Carbon::now()->toDateTimeString(),
+        ]);
     }
 
 
