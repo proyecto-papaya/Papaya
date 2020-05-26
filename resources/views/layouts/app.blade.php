@@ -18,6 +18,13 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
 
+    <!-- Tablesorter -->
+    <script src="{{ asset('js/jquery.tablesorter.js') }}" defer>
+    </script>
+    <script>
+        $.noConflict(true);
+    </script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

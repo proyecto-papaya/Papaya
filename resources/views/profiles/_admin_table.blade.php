@@ -1,4 +1,4 @@
-<table class="table table-bordered table-responsive">
+<table id="adminTable" class="table tablesorter table-bordered table-responsive">
     <thead>
     <tr>
         <th scope="col">ID</th>
