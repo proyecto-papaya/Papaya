@@ -9,7 +9,7 @@
     <script type="application/javascript">
         $(document).ready(function () {
             $("#adminTable").tablesorter({
-                sortList: [[0, 0], [1, 0]]
+                sortList: [[0, 0], [1, 0]],
             });
         });
 

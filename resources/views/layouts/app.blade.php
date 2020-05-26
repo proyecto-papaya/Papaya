@@ -21,7 +21,9 @@
     <!-- Tablesorter -->
     <script src="{{ asset('/js/jquery.tablesorter.js') }}" defer>
     </script>
-    <script>
+    <script src="{{ asset('/js/jquery.tablesorter.widgets.js') }}" defer>
+    </script>
+        <script>
         $.noConflict(true);
     </script>
 

@@ -1,4 +1,4 @@
-<table id="adminTable" class="table tablesorter table-bordered table-responsive">
+<table id="adminTable" class="table tablesorter table-responsive m-auto">
     <thead>
     <tr>
         <th scope="col">ID</th>
@@ -22,6 +22,7 @@
         <td>{{ $user->remember_token }}</td>
         <td>{{ $user->created_at }}</td>
         <td>{{ $user->updated_at }}</td>
+        <td><button class="btn-danger">ELIMINAR</button></td>
     </tr>
     @endforeach
     </tbody>
