@@ -19,7 +19,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Tablesorter -->
-    <script src="{{ asset('js/jquery.tablesorter.js') }}" defer>
+    <script src="{{ asset('/js/jquery.tablesorter.js') }}" defer>
     </script>
     <script>
         $.noConflict(true);
