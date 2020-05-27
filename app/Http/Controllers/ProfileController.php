@@ -132,10 +132,15 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroyCurrentUser()
     {
         $user = Auth::user();
         User::destroy($user->id);
         return redirect('/login');
+    }
+
+    public function destroy(User $user){
+        User::destroy($user->id);
+        return redirect('/admin');
     }
 }

@@ -62,8 +62,11 @@ Route::put('/user/update/password/{user}','ProfileController@updatePassword');
 //Editar foto de perfil
 Route::post('/user/picture/update/{user}', 'ProfileController@updateAvatar');
 
+//Borrar cuenta usuario loggeado
+Route::delete('/user/delete','ProfileController@destroyCurrentUser');
+
 //Borrar cuenta usuario
-Route::delete('/user/delete','ProfileController@destroy');
+Route::delete('/user/delete/{user}','ProfileController@destroy');
 
 //Página de admin
 Route::get('/admin','ProfileController@showAdmin');

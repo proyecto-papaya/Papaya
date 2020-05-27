@@ -22,7 +22,13 @@
         <td>{{ $user->remember_token }}</td>
         <td>{{ $user->created_at }}</td>
         <td>{{ $user->updated_at }}</td>
-        <td><button class="btn-danger">ELIMINAR</button></td>
+        <td>
+            <form action="/user/delete/{{ $user->id }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger" >ELIMINAR</button>
+            </form>
+        </td>
     </tr>
     @endforeach
     </tbody>
