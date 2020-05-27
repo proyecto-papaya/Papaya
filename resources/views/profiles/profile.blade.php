@@ -117,12 +117,21 @@
                                     @endforeach
                                 @else
                                     @foreach($user->posts as $post)
-                                        <div class="col-lg-3 col-6 col-md-3">
-                                            <div class="fa-3x text-center">
-                                                {!! $post->archivos->first()->icon !!}
+                                        @if(Auth::user()->id == $user->id)
+                                            <div class="col-lg-3 col-6 col-md-3">
+                                                <div class="fa-3x text-center">
+                                                    {!! $post->archivos->first()->icon !!}
+                                                </div>
+                                                <div class="text-center">{{$post->title}}</div>
                                             </div>
-                                            <div class="text-center">{{$post->title}}</div>
-                                        </div>
+                                        @elseif(!$post->private)
+                                            <div class="col-lg-3 col-6 col-md-3">
+                                                <div class="fa-3x text-center">
+                                                    {!! $post->archivos->first()->icon !!}
+                                                </div>
+                                                <div class="text-center">{{$post->title}}</div>
+                                            </div>
+                                        @endif
                                     @endforeach
                                 @endif
                             @else
