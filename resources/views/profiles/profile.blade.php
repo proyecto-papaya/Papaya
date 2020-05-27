@@ -111,7 +111,7 @@
                                             <div class="fa-3x text-center">
                                                 {!! $post->archivos->first()->icon !!}
                                             </div>
-                                            <div class="text-center">{{$post->title}}</div>
+                                            <div class="text-center"><a href="/p/{{ $post->id }}">{{$post->title}}</a></div>
                                         </div>
                                         @endif
                                     @endforeach
@@ -121,7 +121,7 @@
                                             <div class="fa-3x text-center">
                                                 {!! $post->archivos->first()->icon !!}
                                             </div>
-                                            <div class="text-center">{{$post->title}}</div>
+                                            <div class="text-center"><a href="/p/{{ $post->id }}">{{$post->title}}</a></div>
                                         </div>
                                     @endforeach
                                 @endif
