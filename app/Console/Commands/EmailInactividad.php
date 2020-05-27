@@ -25,7 +25,7 @@ class EmailInactividad extends Command
      *
      * @var string
      */
-    protected $description = 'Envía un corrreo a los usuarios cuando lleven dos meses inactivos en la página';
+    protected $description = 'Envía un corrreo a los usuarios cuando lleven dos meses sin acceder a la página';
 
     /**
      * Create a new command instance.
@@ -49,19 +49,31 @@ class EmailInactividad extends Command
 
         foreach ($users as $user){
             if ($user->last_login != null){
-                $date = Carbon::createFromFormat('Y-m-d H:i:s', $user->last_login);
+                $date = Carbon::createFromFormat('Y-m-d', $user->last_login);
                 $daysToAdd = 60;
-                $date = $date->addDays($daysToAdd);
+                $date = $date->addDays($daysToAdd)->toDateString();
 
-                if($date <  Carbon::now()->toDateString()){
-                    //Enviar correo
-                    // a $user->email
-                    Mail::to($user->email)->send(new Email($date));
+                $date_now = Carbon::now()->format('Y-m-d');
+
+                if($date == $date_now){
+                    Mail::to($user->email)->send(new Email($user));
+                }
+                else {
+                    $dateToDelete = Carbon::createFromFormat('Y-m-d', $user->last_login);
+                    $daysToAddDelete = 30;
+                    $dateToDelete = $dateToDelete->addDays($daysToAddDelete)->toDateString();
+
+                    if($dateToDelete == $date_now){
+                        $user = User::find($user->id);
+                        $user->delete();
+                    }
+
                 }
             } else{
                 continue;
             }
         }
+
 
 
     }

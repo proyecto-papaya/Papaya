@@ -32,6 +32,7 @@ class Email extends Mailable
      */
     public function build()
     {
+
         /*
         $address = 'papaya.project20@gmail.com';
         $subject = '¡Bienvenidx!';
@@ -45,7 +46,10 @@ class Email extends Mailable
             ->with(['message' => $this->demo['message']]);
         */
 
-        return $this->view('mails.inactividad');
+        $user = $this->demo;
+
+        return $this->view('mails.inactividad',compact('user'))
+            ->subject('Inactividad');
 
     }
 }
