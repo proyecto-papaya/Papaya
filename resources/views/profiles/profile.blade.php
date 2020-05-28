@@ -74,10 +74,14 @@
                                         </div>
                             @endif
                                 <div class="col-md-2 col-3 text-right mr-md-0 pr-md-0">
-                                    <button class="text-marron text-center bg-transparent border-0"  data-toggle="modal" data-target="#seguidoresModal" >Seguidores</button>
+                                    <button class="text-marron text-center bg-transparent border-0" data-toggle="modal" data-target="#seguidoresModal" >
+                                        Seguidores
+                                    </button>
                                 </div>
                                 <div class="col-md-2 col-3 text-right mr-md-0 pr-md-0">
-                                    <div class="text-marron text-center ">Seguidos</div>
+                                    <button class="text-marron text-center bg-transparent border-0" data-toggle="modal" data-target="#seguidosModal" >
+                                        Seguidos
+                                    </button>
                                 </div>
                             </div>
                             <div class="row mr-0 ml-md-5 ml-2">
@@ -241,13 +245,49 @@
         <div class="modal fade" id="seguidoresModal" tabindex="-1" role="dialog" aria-labelledby="seguidoresModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Seguidores</h5>
+                    </div>
                     <div class="modal-body">
-                        <p>Aqui los seguidores</p>
+                        @foreach($user->followers()->get() as $follower)
+                            <div class="row px-5">
+                                <div class="col-3">
+                                            @if($follower->profile_picture == 'images/user.png')
+                                                <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle img-responsive w-100" >
+                                            @else
+                                                <img src="{{Storage::url($follower->profile_picture)}}" class="rounded-circle img-responsive w-100"  alt="">
+                                            @endif
+                                </div>
+                                <div class="col-6"><h5>{{$follower->name}}</h5></div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="modal fade" id="seguidosModal" tabindex="-1" role="dialog" aria-labelledby="seguidosModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Seguidos</h5>
+                    </div>
+                    <div class="modal-body">
+                        @foreach($user->followeds()->get() as $followed)
+                            <div class="row px-5">
+                                <div class="col-3">
+                                    @if($followed->profile_picture == 'images/user.png')
+                                        <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle img-responsive w-100" >
+                                    @else
+                                        <img src="{{Storage::url($followed->profile_picture)}}" class="rounded-circle img-responsive w-100"  alt="">
+                                    @endif
+                                </div>
+                                <div class="col-6"><h5>{{$followed->name}}</h5></div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <script type="application/javascript">
@@ -302,7 +342,7 @@
                 method: 'get'
             }).then(response => response.text())
                 .catch(error => console.log(error))
-            document.getElementById("followButton").innerHTML="Siguiendo"
+            document.getElementById("followButton").innerHTML="No_Seguir"
             document.getElementById("followButton").setAttribute('onclick','unFollow()')
         }
 

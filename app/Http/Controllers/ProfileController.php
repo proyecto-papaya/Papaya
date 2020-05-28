@@ -146,13 +146,12 @@ class ProfileController extends Controller
 
     public function follow($id){
         $follower= Auth::user();
- //       $follower->followeds()->detach($id);
         $follower->followeds()->attach($id);
     }
 
     public function unFollow($id){
         $follower= Auth::user();
         $follower->followeds()->detach($id);
-        //       $follower->followeds()->attach($id);
     }
+
 }
