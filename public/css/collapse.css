@@ -1,0 +1,14 @@
+
+.collapse:not(.show) {
+    display: block;
+    height: 4.5rem;
+    overflow: hidden;
+}
+
+.collapsing {
+    height: 3rem;
+}
+
+
+
+

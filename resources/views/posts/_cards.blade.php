@@ -13,7 +13,12 @@
 
                     </div>
 
-                    <div class="card-text mb-3">{{$post->text}}</div>
+                    <div class="card-text mb-3">
+                        <div class="collapse multi-collapse" id="collapseExample{{$post->id}}" aria-expanded="false" aria-controls="collapseExample">
+                            {{$post->text}}
+                        </div>
+                        <a data-toggle="collapse" href="#collapseExample{{$post->id}}" aria-expanded="false">...</a>
+                    </div>
                     <div class="card-text row justify-content-between">
                         <div class="ml-1 col-10 row">
                             {!! $post->archivos->first()->icon !!}
