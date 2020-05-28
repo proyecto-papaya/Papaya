@@ -1,5 +1,7 @@
-<table id="adminTable" class="table tablesorter table-responsive m-auto">
-    <thead>
+<div class="mt-5 ml-3 mr-3">
+<div class="m-auto card">
+<table id="adminTable" class="table tablesorter table-responsive table-hover m-auto">
+    <thead class="thead-light">
     <tr>
         <th scope="col">ID</th>
         <th scope="col">NOMBRE</th>
@@ -9,6 +11,8 @@
         <th scope="col">REMEMBER TOKEN</th>
         <th scope="col">CREACIÓN</th>
         <th scope="col">ÚLTIMA ACTUALIZACIÓN</th>
+        <th scope="col"></th>
+
     </tr>
     </thead>
     <tbody>
@@ -26,10 +30,12 @@
             <form action="/user/delete/{{ $user->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger" >ELIMINAR</button>
+                <button type="submit" class="btn btn-papaya" >ELIMINAR</button>
             </form>
         </td>
     </tr>
     @endforeach
     </tbody>
 </table>
+</div>
+</div>
