@@ -1973,7 +1973,7 @@ pre code {
 
 .table-hover tbody tr:hover {
     color: #212529;
-    background-color: rgba(0, 0, 0, 0.075);
+    background-color: rgba(222,185,135,0.1);
 }
 
 .table-primary,
@@ -2175,8 +2175,7 @@ pre code {
 
 .table .thead-light th {
     color: #495057;
-    background-color: #e9ecef;
-    border-color: #dee2e6;
+    background-color: rgba(255,234,212,0.56);
 }
 
 .table-dark {
