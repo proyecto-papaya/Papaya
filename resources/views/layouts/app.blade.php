@@ -64,8 +64,6 @@
                         </form>
                     </div>
 
-
-
                 </li>
 
                 <!-- Authentication Links -->
