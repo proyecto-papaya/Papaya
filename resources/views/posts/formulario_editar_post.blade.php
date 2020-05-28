@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Descripcion</label>
-                <textarea class="form-control" id="description" name="description" rows="6">{{$post->text}}</textarea>
+                <textarea class="form-control" id="description" name="description" rows="6" maxlength="500">{{$post->text}}</textarea>
             </div>
             <div class="row">
                 <div class="col-4">
