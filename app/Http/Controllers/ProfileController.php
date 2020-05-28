@@ -92,7 +92,7 @@ class ProfileController extends Controller
         ]);
 
         if (Hash::check($request->actual_password, $user->password)){
-            
+
             $newPassword = Hash::make($request->password);
 
             $user->password = $newPassword;
@@ -142,5 +142,17 @@ class ProfileController extends Controller
     public function destroy(User $user){
         User::destroy($user->id);
         return redirect('/admin');
+    }
+
+    public function follow($id){
+        $follower= Auth::user();
+ //       $follower->followeds()->detach($id);
+        $follower->followeds()->attach($id);
+    }
+
+    public function unFollow($id){
+        $follower= Auth::user();
+        $follower->followeds()->detach($id);
+        //       $follower->followeds()->attach($id);
     }
 }

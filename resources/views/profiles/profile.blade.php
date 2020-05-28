@@ -67,14 +67,17 @@
                                 </div>
                                     @else
                                         <div class="col-md-1 col-3 order-md-10">
-                                            <button type="button" class="btn hvr-ripple-out text-marron">Seguir</button>
+                                            <button type="button" id="followButton" onclick='{{Auth::user()->isFollowing($user->id)?"unFollow()":"follow()"}}' class="btn hvr-ripple-out text-marron">
+                                                {{Auth::user()->isFollowing($user->id)?"Siguiendo":"Seguir"}}
+                                            </button>
+
                                         </div>
                             @endif
                                 <div class="col-md-2 col-3 text-right mr-md-0 pr-md-0">
-                                    <div class="text-marron text-center">Seguidores</div>
+                                    <button class="text-marron text-center bg-transparent border-0"  data-toggle="modal" data-target="#seguidoresModal" >Seguidores</button>
                                 </div>
                                 <div class="col-md-2 col-3 text-right mr-md-0 pr-md-0">
-                                    <div class="text-marron text-center">Seguidos</div>
+                                    <div class="text-marron text-center ">Seguidos</div>
                                 </div>
                             </div>
                             <div class="row mr-0 ml-md-5 ml-2">
@@ -235,8 +238,17 @@
             </div>
         </div>
 
+        <div class="modal fade" id="seguidoresModal" tabindex="-1" role="dialog" aria-labelledby="seguidoresModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>Aqui los seguidores</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
 
 <script type="application/javascript">
     function show() {
@@ -277,12 +289,31 @@
         }
     }
 </script>
-        <script type="application/javascript">
-            document.getElementById("formBuscarInProfile").addEventListener("keypress", submit(e));
-            function submit(e) {
-                if(e.which == 10 || e.which == 13) {
-                    this.form.submit();
-                }}
-        </script>
+    <script type="application/javascript">
+        document.getElementById("formBuscarInProfile").addEventListener("keypress", submit(e));
+        function submit(e) {
+            if(e.which == 10 || e.which == 13) {
+                this.form.submit();
+            }}
+    </script>
+    <script>
+        function follow() {
+            fetch(`/follow{{$user->id}}`, {
+                method: 'get'
+            }).then(response => response.text())
+                .catch(error => console.log(error))
+            document.getElementById("followButton").innerHTML="Siguiendo"
+            document.getElementById("followButton").setAttribute('onclick','unFollow()')
+        }
+
+        function unFollow() {
+            fetch(`/unFollow{{$user->id}}`, {
+                method: 'get'
+            }).then(response => response.text())
+                .catch(error => console.log(error))
+            document.getElementById("followButton").innerHTML="Seguir"
+            document.getElementById("followButton").setAttribute('onclick','follow()')
+        }
+    </script>
 
 @endsection

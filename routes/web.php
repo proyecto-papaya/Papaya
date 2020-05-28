@@ -70,3 +70,8 @@ Route::delete('/user/delete/{user}','ProfileController@destroy');
 
 //Página de admin
 Route::get('/admin','ProfileController@showAdmin');
+
+//Seguir un usuario
+Route::get('/follow{id_user}','ProfileController@follow');
+
+Route::get('/unFollow{id_user}','ProfileController@unFollow');

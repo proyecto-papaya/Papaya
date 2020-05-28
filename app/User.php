@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'profile_picture', 'description', 'role', 'last_login'
+        'name', 'email', 'password', 'profile_picture', 'description', 'role', 'lafollow_user_follow_id_foreignst_login'
     ];
 
     /**
@@ -110,6 +110,18 @@ class User extends Authenticatable
         if ($texto) {
             return $query->where('name','like',"%$texto%");
         }
+    }
+
+    public function followers(){
+        return $this->belongsToMany('App\User', 'follow_user', 'user_id', 'follow_id');
+    }
+    public function followeds(){
+        return $this->belongsToMany('App\User', 'follow_user',  'follow_id','user_id');
+    }
+
+    public function isFollowing($id){
+        $user = Auth::user();
+        return $user->followeds()->where('user_id', $id)->exists();
     }
 
 }
