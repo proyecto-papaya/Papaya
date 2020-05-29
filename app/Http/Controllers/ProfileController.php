@@ -154,4 +154,14 @@ class ProfileController extends Controller
         $follower->followeds()->detach($id);
     }
 
+    public function deleteFollower($id){
+        $follower= Auth::user();
+        $follower->followers()->detach($id);
+    }
+
+    public function deleteFollowed($id){
+        $follower= Auth::user();
+        $follower->followeds()->detach($id);
+    }
+
 }

@@ -75,3 +75,7 @@ Route::get('/admin','ProfileController@showAdmin');
 Route::get('/follow{id_user}','ProfileController@follow');
 
 Route::get('/unFollow{id_user}','ProfileController@unFollow');
+
+Route::get('/deleteFollower{id_user}','ProfileController@deleteFollower');
+
+Route::get('/deleteFollowed{id_user}','ProfileController@deleteFollowed');
