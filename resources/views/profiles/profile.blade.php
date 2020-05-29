@@ -124,7 +124,7 @@
                                             <div class="fa-3x text-center">
                                                 {!! $post->archivos->first()->icon !!}
                                             </div>
-                                            <div class="text-center"><a href="/p/{{ $post->id }}">{{$post->title}}</a></div>
+                                            <div class="text-center text-dark"><a class="text-dark" href="/p/{{ $post->id }}">{{$post->title}}</a></div>
                                         </div>
                                         @endif
                                     @endforeach
@@ -135,10 +135,9 @@
                                                 <div class="fa-3x text-center">
                                                     {!! $post->archivos->first()->icon !!}
                                                 </div>
-                                                <div class="text-center">{{$post->title}}</div>
+                                                <div class="text-center"><a class="text-dark" href="/p/{{ $post->id }}">{{$post->title}}</a></div>
                                             </div>
-                                            <div class="text-center"><a href="/p/{{ $post->id }}">{{$post->title}}</a></div>
-                                        </div>
+
 
                                         @elseif(!$post->private)
                                             <div class="col-lg-3 col-6 col-md-3">
