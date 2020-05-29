@@ -1,6 +1,6 @@
 
 .collapse:not(.show) {
-    display: block;
+    /*display: block;*/
     height: 4.5rem;
     overflow: hidden;
 }
