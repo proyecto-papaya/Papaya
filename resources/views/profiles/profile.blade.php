@@ -65,24 +65,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                    @else
-                                        <div class="col-md-1 col-3 order-md-10">
-                                            <button type="button" id="followButton" onclick='{{Auth::user()->isFollowing($user->id)?"unFollow()":"follow()"}}' class="btn hvr-ripple-out text-marron">
-                                                {{Auth::user()->isFollowing($user->id)?"Siguiendo":"Seguir"}}
-                                            </button>
-
-                                        </div>
-                            @endif
                                 <div class="col-md-2 col-3 text-right mr-md-0 pr-md-0">
-                                    <button class="text-marron text-center bg-transparent border-0" data-toggle="modal" data-target="#seguidoresModal" >
+                                    <button class="text-marron text-center bg-transparent border-0 font-weight-bolder" data-toggle="modal" data-target="#seguidoresModal" >
                                         Seguidores
                                     </button>
                                 </div>
                                 <div class="col-md-2 col-3 text-right mr-md-0 pr-md-0">
-                                    <button class="text-marron text-center bg-transparent border-0" data-toggle="modal" data-target="#seguidosModal" >
+                                    <button class="text-marron text-center bg-transparent border-0 font-weight-bolder" data-toggle="modal" data-target="#seguidosModal" >
                                         Seguidos
                                     </button>
                                 </div>
+                                    @else
+
+                                <div class="dropdown col-md-1 offset-md-3 offset-5 col-3 order-md-10">
+                                        <div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button type="button" id="followButton" onclick='{{Auth::user()->isFollowing($user->id)?"show2()":"follow()"}}' class="btn hvr-ripple-out text-marron">
+                                                {{Auth::user()->isFollowing($user->id)?"Siguiendo":"Seguir"}}
+                                            </button>
+                                        </div>
+
+                                    <div id="unFollowButton"class="dropdown-menu position-absolute" style="top:0" aria-labelledby="dropdownMenu2">
+                                        <button class="dropdown-item text-marron"  onclick="unFollow()" type="button"><lavel>Dejar de seguir</lavel></button>
+                                        </div>
+                                </div>
+                            @endif
                             </div>
                             <div class="row mr-0 ml-md-5 ml-2">
                                 <div class="col-10 pt-4 pb-4"><label>{{$user->description}}</label></div>
@@ -259,6 +265,9 @@
                                             @endif
                                 </div>
                                 <div class="col-6"><h5>{{$follower->name}}</h5></div>
+                                <div class="col-3">
+                                    <button onclick='deleteFollower({{$follower->id}})' class="btn btn-papaya">Eliminar</button>
+                                </div>
                             </div>
                         @endforeach
                     </div>
@@ -282,6 +291,9 @@
                                     @endif
                                 </div>
                                 <div class="col-6"><h5>{{$followed->name}}</h5></div>
+                                <div class="col-3">
+                                    <button  class="btn btn-papaya" onclick='deleteFollowed({{$followed->id}})'>Eliminar</button>
+                                </div>
                             </div>
                         @endforeach
                     </div>
@@ -342,8 +354,9 @@
                 method: 'get'
             }).then(response => response.text())
                 .catch(error => console.log(error))
-            document.getElementById("followButton").innerHTML="No_Seguir"
-            document.getElementById("followButton").setAttribute('onclick','unFollow()')
+            document.getElementById("followButton").innerHTML="Siguiendo"
+            document.getElementById("followButton").setAttribute('onclick','show2()')
+            $('#unFollowButton').addClass("d-none");
         }
 
         function unFollow() {
@@ -353,6 +366,25 @@
                 .catch(error => console.log(error))
             document.getElementById("followButton").innerHTML="Seguir"
             document.getElementById("followButton").setAttribute('onclick','follow()')
+        }
+
+        function deleteFollower(id) {
+            fetch('/deleteFollower'+id, {
+                method: 'get'
+            }).then(response => response.text())
+                .catch(error => console.log(error))
+        }
+
+        function deleteFollowed(id) {
+            fetch(`/deleteFollowed`+id, {
+                method: 'get'
+            }).then(response => response.text())
+                .catch(error => console.log(error))
+        }
+
+        function show2(){
+            $('#unFollowButton').removeClass("d-none");
+            $('#dropdownMenu2').addClass("show");
         }
     </script>
 
