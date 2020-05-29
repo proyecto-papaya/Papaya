@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f297f703-a04b-4c39-8267-720e0cb82030" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profiles/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +190,7 @@
       <workItem from="1589983139611" duration="8797000" />
       <workItem from="1590166560558" duration="252000" />
       <workItem from="1590311399100" duration="6603000" />
-      <workItem from="1590754243353" duration="13911000" />
+      <workItem from="1590754243353" duration="14759000" />
     </task>
     <servers />
   </component>

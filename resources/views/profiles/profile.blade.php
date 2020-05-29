@@ -256,7 +256,7 @@
                     </div>
                     <div class="modal-body">
                         @foreach($user->followers()->get() as $follower)
-                            <div class="row px-5">
+                            <div class="row px-5" id="follower{{$follower->id}}">
                                 <div class="col-3">
                                             @if($follower->profile_picture == 'images/user.png')
                                                 <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle img-responsive w-100" >
@@ -282,7 +282,7 @@
                     </div>
                     <div class="modal-body">
                         @foreach($user->followeds()->get() as $followed)
-                            <div class="row px-5">
+                            <div class="row px-5" id="followed{{$followed->id}}">
                                 <div class="col-3">
                                     @if($followed->profile_picture == 'images/user.png')
                                         <img src="{{ asset('images/user.png') }}" alt="" class="rounded-circle img-responsive w-100" >
@@ -373,6 +373,7 @@
                 method: 'get'
             }).then(response => response.text())
                 .catch(error => console.log(error))
+            $('#follower'+id).addClass("d-none");
         }
 
         function deleteFollowed(id) {
@@ -380,6 +381,8 @@
                 method: 'get'
             }).then(response => response.text())
                 .catch(error => console.log(error))
+
+            $('#followed'+id).addClass("d-none");
         }
 
         function show2(){
