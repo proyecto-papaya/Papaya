@@ -98,6 +98,9 @@
                                 @endif
                                 {{ Auth::user()->name }}
                             </a>
+                            @if(Auth::user()->role == 'admin')
+                                <a class="dropdown-item" href="/admin">Panel admin</a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
