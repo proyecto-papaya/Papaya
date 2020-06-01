@@ -16,9 +16,12 @@ class checkAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::user()->role == 'admin'){
+        if(Auth::user()->role == 'admin'){
+            return $next($request);
+        }
+        else{
             return redirect('home');
         }
-        return $next($request);
+
     }
 }
