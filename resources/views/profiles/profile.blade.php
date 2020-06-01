@@ -174,7 +174,7 @@
                                                           placeholder="{{$user->description}}"></textarea>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary">Actualizar</button>
+                                                <button type="submit" class="btn btn-papaya">Actualizar</button>
                                             </div>
                                         </form>
                                     </div>
@@ -214,7 +214,7 @@
                                     <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required autocomplete="new_password">
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                    <button type="submit" class="btn btn-papaya">Actualizar</button>
                                 </div>
                             </form>
 
@@ -238,7 +238,7 @@
                                 <p>Los cambios serán irreversibles.</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Eliminar mi cuenta</button>
+                                <button type="submit" class="btn btn-papaya">Eliminar mi cuenta</button>
                             </div>
                         </form>
 
